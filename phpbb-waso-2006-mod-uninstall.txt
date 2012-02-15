@@ -1,0 +1,3171 @@
+############################################################## 
+## MOD Title: phpBB WASO UNINSTALL
+## MOD Author: crazybat < crazybat@gmail.com > (Marco Battilana) http://crazybat.ca 
+## MOD Description: phpBB Web and Accessibility Standards Overhaul 
+## MOD Version: 2.0.06
+## 
+## Installation Level: Advanced 
+## Installation Time: 45 - 60 Minutes 
+## Files To Edit: 
+##		faq.php
+##		groupcp.php
+##		index.php
+##		memberlist.php
+##		modcp.php
+##		posting.php
+##		privmsg.php
+##		search.php
+##		viewforum.php
+##		viewonline.php
+##		viewtopic.php
+##		includes/bbcode.php
+##		includes/functions.php
+##		includes/functions_admin.php
+##		includes/functions_search.php
+##		includes/functions_selects.php
+##		includes/page_header.php
+##		includes/page_tail.php
+##		includes/usercp_register.php
+##		includes/usercp_viewprofile.php
+##		language/lang_english/lang_bbcode.php
+##		language/lang_english/lang_faq.php
+##		language/lang_english/lang_main.php
+## 		templates/subSilver/index_body.tpl
+## 		templates/subSilver/modcp_body.tpl
+## 		templates/subSilver/overall_header.tpl
+## 		templates/subSilver/overall_footer.tpl
+## 		templates/subSilver/privmsgs_body.tpl
+## 		templates/subSilver/privmsgs_read_body.tpl
+## 		templates/subSilver/search_results_posts.tpl
+## 		templates/subSilver/search_results_topics.tpl
+## 		templates/subSilver/viewforum_body.tpl
+## 		templates/subSilver/viewtopic_body.tpl
+## Included Files: 
+## 		about.php
+## 		templates/subSilver/screen-subsilver-waso.css
+## License: http://opensource.org/licenses/gpl-license.php GNU General Public License v2 
+############################################################## 
+## For security purposes, please check: http://www.phpbb.com/mods/ 
+## for the latest version of this MOD. Although MODs are checked 
+## before being allowed in the MODs Database there is no guarantee 
+## that there are no security problems within the MOD. No support 
+## will be given for MODs not found within the MODs Database which 
+## can be found at http://www.phpbb.com/mods/ 
+############################################################## 
+## Author Notes: 
+## The overall goal of these MOD and style changes you'll be missing;
+##	- Attempting to meet the W3C Web Content Accessibility Guidelines - Level A 
+##	- Striving to validate all forum pages as XHTML 1.0 Strict 
+##	- Seperating structure/semantics from presentation using CSS for layout
+##
+## REMEMBER TO BACK UP YOUR FILES BEFORE APPLYING THIS MOD AS MANY FILES WILL BE OVERWRITTEN!!!
+##
+## Installation using EasyMOD v0.3.0
+## To install;
+##
+##	- Unzip the file 'phpbb-waso-2006-uninstall.zip' into your forum admin/mods directory. (ie: http://yoursite.com/forums/admin/mods/)
+##	- Log in with your administration name and password to access your Administration panel 
+##	- In the admin panel, navigate to 'MOD center', then 'Install MODs' 
+##	- Enter your EasyMOD Password, then 'Access EasyMOD' 
+##	- You should see in your list of 'Unprocessed MODs', you should see a listing for 'phpBB WASO UNINSTALL'. Inline with this listing, select 'Process' 
+##	- You will see 'Step 1 of 3 - Processing completed successfully!'. If so, then select 'Next Step' 
+##	- You will then see 'Step 2 of 3 - Proposed Database Alterations'. For this MOD, this is not applicable. Therefore, select 'Complete Installation' 
+##	- You will then see 'Step 3 of 3 - Installation Complete!'. Feel free to see the list of changes to the applicable files 
+##	- In the admin panel, navigate to 'Style Admin', then 'Add'
+##	- You should see 'crazybat' as one of the themes available. If so, select 'install'. If successful, you should see 'The selected theme has been installed successfully'
+##	- Navigate to 'General Admin', then 'Configuration'
+##	- Next to 'Default Style', choose 'crazybat' as the style
+##  - Next to 'Override user style - Replaces users style with the default', choose 'Yes'
+##	- Hit 'Submit'
+##	- Navigate to 'Administration' and go to 'Forum Index'. Your phpBB WASO MOD should now be visible
+##
+## Manual preMOD Installation
+## To install;
+##
+##	- Unzip the file 'phpbb-waso-2006-premod.zip' into your forum directory. (ie: http://yoursite.com/forums/) 
+##	- You will be warned that files of the same name will be overwritten. Select 'Yes' to overwrite the necessary files 
+##	- Navigate to your forums with your browser of choice 
+##	- Log in with your administration name and password to access your Administration panel 
+##	- In the admin panel, navigate to 'Style Admin', then 'Add'
+##	- You should see 'crazybat' as one of the themes available. If so, select 'install'. If successful, you should see 'The selected theme has been installed successfully'
+##	- Navigate to 'General Admin', then 'Configuration' 
+##	- Next to 'Default Style', choose 'crazybat' as the style 
+##  - Next to 'Override user style - Replaces users style with the default', choose 'Yes'
+##	- Hit 'Submit'
+##	- Navigate to 'Administration' and go to 'Forum Index'. Your phpBB WASO MOD should now be visible
+##	
+## Again, please take the appropriate caution when using these files. I have taken great care to assure quality assurance, but please remember to back up your files before installing this MOD.
+##
+############################################################## 
+## MOD History: 
+##
+## Please refer to the release notes included in your phpbb WASO MOD package
+## 
+############################################################## 
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD 
+############################################################## 
+
+#
+#-----[ DIY INSTRUCTIONS ]------------------------------------------
+# 
+1. In the admin panel, navigate to 'Style Admin', then 'Add'
+2. You should see 'crazybat' as one of the themes available. If so, select 'install'. If successful, you should see 'The selected theme has been installed successfully'
+3. Navigate to 'General Admin', then 'Configuration' 
+4. Next to 'Default Style', choose 'crazybat' as the style 
+5. Next to 'Override user style - Replaces users style with the default', choose 'Yes'
+6. Hit 'Submit'
+7. Navigate to 'Administration' and go to 'Forum Index'. Your phpBB WASO MOD should now be visible
+
+Delete the following files;
+about.php
+phpbb-waso-release-notes.txt
+templates/crazybat/admin/*.*
+templates/crazybat/css/*.*
+templates/crazybat/images/*.*
+templates/crazybat/js/*.js
+templates/crazybat/*.tpl
+templates/crazybat/crazybat.cfg
+templates/crazybat/theme_info.cfg
+templates/subSilver/screen-subsilver-waso.css
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+faq.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana 
+// 4 June 2005 
+// - Changed anchor reference to textual (ie:xxx0, xxx1, etc) and to coincide with anchor id.
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+# 
+				'U_FAQ_LINK' => '#faq' . $faq_block[$i][$j]['id'])
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+				'U_FAQ_LINK' => '#' . $faq_block[$i][$j]['id'])
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+groupcp.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana 
+// 25 March 2005 
+// - Replaced images with anchors. Each anchor is classed as 'smallbutton' so the Style Sheet can dictate an image if you so desire.
+// - Removed multiple instances of the border attribute
+// 25 June 2005
+// - Incorporated phpBB 2.0.15 fixes
+// 28 August 2005
+// - As per the fix from 6 June 2005, each anchor now has a unique class assigned to differentiate the buttons. (IE: profile, pm, email, etc.) as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 13 December 2005
+// - Added a missing 'alt' attribute
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+				$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+				$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$email_img = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+		$email = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="' . $lang['Send_email'] . '" title="' . $lang['Send_email'] . '" border="0" /></a>';
+		$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$profile_img = '<a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a>';
+	$profile = '<a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="' . $lang['Read_profile'] . '" title="' . $lang['Read_profile'] . '" border="0" /></a>';
+	$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$pm_img = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+	$pm = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="' . $lang['Send_private_message'] . '" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+	$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$www_img = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a>' : '';
+	$www = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$www_img = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" target="_userwww"><img src="' . $images['icon_www'] . '" alt="' . $lang['Visit_website'] . '" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
+	$www = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" target="_userwww">' . $lang['Visit_website'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$icq_status_img = '<a href="http://wwp.icq.com/' . $row['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $row['user_icq'] . '&img=5" width="18" height="18" /></a>';
+		$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';
+		$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$icq_status_img = '<a href="http://wwp.icq.com/' . $row['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $row['user_icq'] . '&img=5" width="18" height="18" border="0" /></a>';
+		$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="' . $lang['ICQ'] . '" title="' . $lang['ICQ'] . '" border="0" /></a>';
+		$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '">' . $lang['ICQ'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$aim_img = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+	$aim = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$aim_img = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?"><img src="' . $images['icon_aim'] . '" alt="' . $lang['AIM'] . '" title="' . $lang['AIM'] . '" border="0" /></a>' : '';
+	$aim = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?">' . $lang['AIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$msn_img = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a>' : '';
+	$msn = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$msn_img = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_msnm'] . '" alt="' . $lang['MSNM'] . '" title="' . $lang['MSNM'] . '" border="0" /></a>' : '';
+	$msn = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$yim_img = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+	$yim = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$yim_img = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="' . $lang['YIM'] . '" title="' . $lang['YIM'] . '" border="0" /></a>' : '';
+	$yim = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $row['username']) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $row['username']) . '</a>';
+	$search = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $row['username']) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $row['username']) . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_search'] . '" alt="' . sprintf($lang['Search_user_posts'], $row['username']) . '" title="' . sprintf($lang['Search_user_posts'], $row['username']) . '" border="0" /></a>';
+	$search = '<a href="' . $temp_url . '">' . sprintf($lang['Search_user_posts'], $row['username']) . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		
+		'L_GROUP_PARTICIPANTS_TITLE' => $lang['Group Participants'],
+		'L_GROUP_INFO_CAPTION' => $lang['Group_Info_Caption'],
+		'L_GROUP_PENDING_CAPTION' => $lang['Group_Pending_Caption'],
+		'L_GROUP_HIDDEN_CAPTION' => $lang['Group_Hidden_Caption'],
+
+		'L_MODERATOR_OPTIONS_TITLE' => $lang['Moderator_Options_Title'],
+		'L_FIND_USERS_TITLE' => $lang['Find_Users_Title'],
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+index.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana 
+// 25 March 2005 
+// - Changed folder_img, folder_alt, to use only folder_img, respectfully. folder_img now define the entire image element. (ie: <div class="iconclass"><span>whatever text</span></div>). This allows the CSS to control the image used for these icons.
+// 25 September 2005
+//  - Removed image for 'View Latest Post' and replaced with a text link 
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+# 
+		'L_LARGE_ICON_LEGEND_TITLE' => $lang['Large_Icon_Legend_Title'],
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+		
+		
+#
+#-----[ FIND ]------------------------------------------
+# 
+								$folder_image = '<span class="iconlocked"><strong>' . $lang['Forum_locked'] . ' - </strong></span>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+								$folder_image = $images['forum_locked']; 
+								$folder_alt = $lang['Forum_locked'];
+#
+#-----[ FIND ]------------------------------------------
+# 
+								$folder_image = ( $unread_topics ) ? '<span class="iconnewposts"><strong>' . $lang['New_posts'] . ' - </strong></span>' : '<span class="iconnonewposts"><strong>' . $lang['No_new_posts'] . ' - </strong></span>'; 
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+								$folder_image = ( $unread_topics ) ? $images['forum_new'] : $images['forum']; 
+								$folder_alt = ( $unread_topics ) ? $lang['New_posts'] : $lang['No_new_posts'];
+#
+#-----[ FIND ]------------------------------------------
+# 
+								$last_post = $last_post_time . ' - ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+								$last_post = $last_post_time . '<br />';
+#
+#-----[ FIND ]------------------------------------------
+# 
+								$last_post .= '- <a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $forum_data[$j]['forum_last_post_id']) . '#userpostid' . $forum_data[$j]['forum_last_post_id'] . '" title="' . $lang['View_latest_post'] . '" class="latestpostlink">' . $lang['View_latest_post'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+								$last_post .= '<a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $forum_data[$j]['forum_last_post_id']) . '#' . $forum_data[$j]['forum_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" border="0" alt="' . $lang['View_latest_post'] . '" title="' . $lang['View_latest_post'] . '" /></a>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+memberlist.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana 
+// 25 March 2005 
+// 	- Replaced images with anchors. Each anchor is classed as 'smallbutton' so the Style Sheet can dictate an image if you so desire.
+// 28 March 2005
+// 	- Added id attributes to select elements
+// 28 August 2005
+// - As per the fix from 6 June 2005, each anchor now has a unique class assigned to differentiate the buttons. (IE: profile, pm, email, etc.) as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 7 May 2006
+// - Incorporate phpBB 2.0.20 fixes
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporate phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$select_sort_mode = '<select id="ddlsortmethod" name="mode">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$select_sort_mode = '<select name="mode">';
+#
+#-----[ FIND ]------------------------------------------
+# 
+$select_sort_order = '<select id="ddlorder" name="order">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$select_sort_order = '<select name="order">';
+#
+#-----[ FIND ]------------------------------------------
+# 
+	'L_MEMBERLIST_TITLE' => $lang['Memberlist_Title'],
+	'L_MEMBERLIST_CAPTION' => $lang['Memberlist_Caption'],
+	'L_MEMBER_NUMBER' => $lang['Memberlist_Number'],
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+# 
+					$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+# 
+					$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+					$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $row['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$email_img = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+			$email = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="' . $lang['Send_email'] . '" title="' . $lang['Send_email'] . '" border="0" /></a>';
+			$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$profile_img = '<a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a>';
+		$profile = '<a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="' . $lang['Read_profile'] . '" title="' . $lang['Read_profile'] . '" border="0" /></a>';
+		$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$pm_img = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+		$pm = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="' . $lang['Send_private_message'] . '" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+		$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$www_img = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a>' : '';
+		$www = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$www_img = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" target="_userwww"><img src="' . $images['icon_www'] . '" alt="' . $lang['Visit_website'] . '" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
+		$www = ( $row['user_website'] ) ? '<a href="' . $row['user_website'] . '" target="_userwww">' . $lang['Visit_website'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$icq_status_img = '<a href="http://wwp.icq.com/' . $row['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $row['user_icq'] . '&img=5" width="18" height="18" /></a>';
+			$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';
+			$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$icq_status_img = '<a href="http://wwp.icq.com/' . $row['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $row['user_icq'] . '&img=5" width="18" height="18" border="0" /></a>';
+			$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="' . $lang['ICQ'] . '" title="' . $lang['ICQ'] . '" border="0" /></a>';
+			$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $row['user_icq'] . '">' . $lang['ICQ'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$aim_img = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+		$aim = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$aim_img = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?"><img src="' . $images['icon_aim'] . '" alt="' . $lang['AIM'] . '" title="' . $lang['AIM'] . '" border="0" /></a>' : '';
+		$aim = ( $row['user_aim'] ) ? '<a href="aim:goim?screenname=' . $row['user_aim'] . '&amp;message=Hello+Are+you+there?">' . $lang['AIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$msn_img = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a>' : '';
+		$msn = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$msn_img = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_msnm'] . '" alt="' . $lang['MSNM'] . '" title="' . $lang['MSNM'] . '" border="0" /></a>' : '';
+		$msn = ( $row['user_msnm'] ) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$yim_img = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+		$yim = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$yim_img = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="' . $lang['YIM'] . '" title="' . $lang['YIM'] . '" border="0" /></a>' : '';
+		$yim = ( $row['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $row['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$search_img = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $username) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $username) . '</a>';
+		$search = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $username) . '" class="smallbutton-search">' . $lang['Search_user_posts'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$search_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_search'] . '" alt="' . sprintf($lang['Search_user_posts'], $username) . '" title="' . sprintf($lang['Search_user_posts'], $username) . '" border="0" /></a>';
+		$search = '<a href="' . $temp_url . '">' . sprintf($lang['Search_user_posts'], $username) . '</a>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+modcp.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana
+// 06 July 2005 
+//	- Added label elements to match with checkboxes
+// 18 September 2005
+//  - Changed reference of search image to be dictated by Style Sheet
+// 19 September 2005
+//  - Changed references of the image that dictate what type of post you are viewing (ie: Sticky, Announcement, etc.) to now be dictated by Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 7 May 2006
+// - Incorporate phpBB 2.0.20 fixes
+// 19 December 2007
+// - Incorporate phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+					$checkbox = ( $i > 0 ) ? '<input type="checkbox" id="chkboxsplit' . $post_id . '" name="post_id_list[]" value="' . $post_id . '" /> <label for="chkboxsplit' . $post_id . '" class="inlinelabel">' . $lang['Select'] . '</label>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$checkbox = ( $i > 0 ) ? '<input type="checkbox" name="post_id_list[]" value="' . $post_id . '" />' : '&nbsp;';
+#
+#-----[ FIND ]------------------------------------------
+#
+			'SEARCH_IMG' => "<span class='offleft'>" . $lang['Select'] . "</span>",
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			'SEARCH_IMG' => $images['icon_search'], 
+#
+#-----[ FIND ]------------------------------------------
+#
+			'L_MOD_CAPTION' => $lang['Mod_CP_Caption'],
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#	
+			
+#
+#-----[ FIND ]------------------------------------------
+#
+			if ( $row['topic_status'] == TOPIC_LOCKED )
+			{
+				$folder_img = "<span class='locked'><strong class='offleft'>" . $lang['Topic_locked'] . "</strong></span>";
+				$folder_alt = $lang['Topic_locked'];
+			}
+			else
+			{
+				if ( $row['topic_type'] == POST_ANNOUNCE )
+				{
+					$folder_img = "<span class='announcement'><strong class='offleft'>" . $lang['Topic_Announcement'] . "</strong></span>";
+					$folder_alt = $lang['Topic_Announcement'];
+				}
+				else if ( $row['topic_type'] == POST_STICKY )
+				{
+					$folder_img = "<span class='sticky'><strong class='offleft'>" . $lang['Topic_Sticky'] . "</strong></span>";
+					$folder_alt = $lang['Topic_Sticky'];
+				}
+				else 
+				{
+					$folder_img = "<span class='nonewposts'><strong class='offleft'>" . $lang['No_new_posts'] . "</strong></span>";
+					$folder_alt = $lang['No_new_posts'];
+				}
+			}
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			if ( $row['topic_status'] == TOPIC_LOCKED )
+			{
+				$folder_img = $images['folder_locked'];
+				$folder_alt = $lang['Topic_locked'];
+			}
+			else
+			{
+				if ( $row['topic_type'] == POST_ANNOUNCE )
+				{
+					$folder_img = $images['folder_announce'];
+					$folder_alt = $lang['Topic_Announcement'];
+				}
+				else if ( $row['topic_type'] == POST_STICKY )
+				{
+					$folder_img = $images['folder_sticky'];
+					$folder_alt = $lang['Topic_Sticky'];
+				}
+				else 
+				{
+					$folder_img = $images['folder'];
+					$folder_alt = $lang['No_new_posts'];
+				}
+			}
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+posting.php
+#
+#-----[ FIND ]------------------------------------------
+#	
+// Changes for phpBB WASO
+// Marco Battilana
+// 28 March 2005 
+//	- Removed multiple instances of the target attribute
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 7 May 2006
+// - Incorporate phpBB 2.0.20 fixes
+// 19 December 2007
+// - Incorporate phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+		$topic_type_toggle .= ' /> <label for="radPostSticky" class="inlinelabel">' . $lang['Post_Sticky'] . '</label>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$topic_type_toggle .= ' /> ' . $lang['Post_Sticky'] . '&nbsp;&nbsp;';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$topic_type_toggle .= ' /> <label for="radPostAnnouncement" class="inlinelabel">' . $lang['Post_Announcement'] . '</label>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$topic_type_toggle .= ' /> ' . $lang['Post_Announcement'] . '&nbsp;&nbsp;';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$topic_type_toggle = '<h5>' . $lang['Post_topic_as'] . '</h5> <input type="radio" name="topictype" id="radPostNormal" value="' . POST_NORMAL .'"' . ( ( $post_data['topic_type'] == POST_NORMAL || $topic_type == POST_NORMAL ) ? ' checked="checked"' : '' ) . ' /> <label for="radPostNormal" class="inlinelabel">' . $lang['Post_Normal'] . '</label>' . $topic_type_toggle;
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$topic_type_toggle = $lang['Post_topic_as'] . ': <input type="radio" name="topictype" value="' . POST_NORMAL .'"' . ( ( $post_data['topic_type'] == POST_NORMAL || $topic_type == POST_NORMAL ) ? ' checked="checked"' : '' ) . ' /> ' . $lang['Post_Normal'] . '&nbsp;&nbsp;' . $topic_type_toggle;
+#
+#-----[ FIND ]------------------------------------------
+#
+	'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '">', '</a>'),
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '" target="_phpbbcode">', '</a>'), 
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+privmsg.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005 
+// 	- Replaced <span><b>xxx</b></span> with <strong>xxx</strong>
+//	- Added 'title' attributes to anchors
+//	- Removed target='_phpbbcode'
+//  - Replaced images with anchors. Each anchor is classed as 'smallbutton' so the Style Sheet can dictate an image if you so desire.
+// 25 June 2005
+// - Incorporated phpBB 2.0.14 fixes
+// 30 July 2005
+// - Incorporated phpBB 2.0.17 fixes
+// 28 August 2005
+// - As per the fix from 6 June 2005, each anchor now has a unique class assigned to differentiate the buttons. (IE: profile, pm, email, etc.) as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 15 September 2005
+// - Changed ampersand to the proper escape character
+// 28 September 2005
+// - Changed references of the image that dictate what type of post you are viewing (ie: Sticky, Announcement, etc.) to now be dictated by Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 7 May 2006
+// - Incorporate phpBB 2.0.20 fixes
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$inbox_img = ( $folder != 'inbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=inbox") . '"><img src="' . $images['pm_inbox'] . '" alt="' . $lang['Inbox'] . '" /></a>' : '<img src="' . $images['pm_inbox'] . '" alt="' . $lang['Inbox'] . '" />';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$inbox_img = ( $folder != 'inbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=inbox") . '"><img src="' . $images['pm_inbox'] . '" border="0" alt="' . $lang['Inbox'] . '" /></a>' : '<img src="' . $images['pm_inbox'] . '" border="0" alt="' . $lang['Inbox'] . '" />';
+#
+#-----[ FIND ]------------------------------------------
+#
+$outbox_img = ( $folder != 'outbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=outbox") . '"><img src="' . $images['pm_outbox'] . '" alt="' . $lang['Outbox'] . '" /></a>' : '<img src="' . $images['pm_outbox'] . '" alt="' . $lang['Outbox'] . '" />';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$outbox_img = ( $folder != 'outbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=outbox") . '"><img src="' . $images['pm_outbox'] . '" border="0" alt="' . $lang['Outbox'] . '" /></a>' : '<img src="' . $images['pm_outbox'] . '" border="0" alt="' . $lang['Outbox'] . '" />';
+#
+#-----[ FIND ]------------------------------------------
+#
+$sentbox_img = ( $folder != 'sentbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=sentbox") . '"><img src="' . $images['pm_sentbox'] . '" alt="' . $lang['Sentbox'] . '" /></a>' : '<img src="' . $images['pm_sentbox'] . '" alt="' . $lang['Sentbox'] . '" />';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$sentbox_img = ( $folder != 'sentbox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=sentbox") . '"><img src="' . $images['pm_sentbox'] . '" border="0" alt="' . $lang['Sentbox'] . '" /></a>' : '<img src="' . $images['pm_sentbox'] . '" border="0" alt="' . $lang['Sentbox'] . '" />';
+#
+#-----[ FIND ]------------------------------------------
+#
+$savebox_img = ( $folder != 'savebox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=savebox") . '"><img src="' . $images['pm_savebox'] . '" alt="' . $lang['Savebox'] . '" /></a>' : '<img src="' . $images['pm_savebox'] . '" alt="' . $lang['Savebox'] . '" />';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$savebox_img = ( $folder != 'savebox' || $mode != '' ) ? '<a href="' . append_sid("privmsg.$phpEx?folder=savebox") . '"><img src="' . $images['pm_savebox'] . '" border="0" alt="' . $lang['Savebox'] . '" /></a>' : '<img src="' . $images['pm_savebox'] . '" border="0" alt="' . $lang['Savebox'] . '" />';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$l_new_message .= '<br /><br />' . sprintf($lang['Click_view_privmsg'], '<a href="' . append_sid("privmsg.".$phpEx."?folder=inbox") . '" onclick="jump_to_inbox();return false;" title="' . $lang['Click_view_privmsg'] . '">', '</a>');
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$l_new_message .= '<br /><br />' . sprintf($lang['Click_view_privmsg'], '<a href="' . append_sid("privmsg.".$phpEx."?folder=inbox") . '" onclick="jump_to_inbox();return false;" target="_new">', '</a>');
+#
+#-----[ FIND ]------------------------------------------
+#
+		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&amp;mode=$mode&" . POST_POST_URL . "=$privmsgs_id", true));
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode&" . POST_POST_URL . "=$privmsgs_id", true));
+#
+#-----[ FIND ]------------------------------------------
+#
+		'post_img' => '<a href="' . $post_urls['post'] . '" title="' . $lang['Post_new_pm'] . '" class="smallbutton">' . $lang['Post_new_pm'] . '</a>',
+		'post' => '<a href="' . $post_urls['post'] . '" title="' . $lang['Post_new_pm'] . '" class="smallbutton">' . $lang['Post_new_pm'] . '</a>',
+		'reply_img' => '<a href="' . $post_urls['reply'] . '" title="' . $lang['Post_reply_pm'] . '" class="postreply"><span>' . $lang['Post_reply_pm'] . '</span></a>',
+		'reply' => '<a href="' . $post_urls['reply'] . '" title="' . $lang['Post_reply_pm'] . '" class="smallbutton">' . $lang['Post_reply_pm'] . '</a>',
+		'quote_img' => '<a href="' . $post_urls['quote'] . '" title="' . $lang['Post_quote_pm'] . '" class="smallbutton-quote"><span class="offleft">' . $lang['Post_quote_pm'] . '</span></a>',
+		'quote' => '<a href="' . $post_urls['quote'] . '" title="' . $lang['Post_quote_pm'] . '" class="smallbutton-quote"><span class="offleft">' . $lang['Post_quote_pm'] . '</span></a>',
+		'edit_img' => '<a href="' . $post_urls['edit'] . '" title="' . $lang['Edit_pm'] . '" class="smallbutton-edit"><span class="offleft">' . $lang['Edit_pm'] . '</span></a>',
+		'edit' => '<a href="' . $post_urls['edit'] . '" title="' . $lang['Edit_pm'] . '" class="smallbutton-edit"><span class="offleft">' . $lang['Edit_pm'] . '</span></a>'
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		'post_img' => '<a href="' . $post_urls['post'] . '"><img src="' . $images['pm_postmsg'] . '" alt="' . $lang['Post_new_pm'] . '" border="0" /></a>',
+		'post' => '<a href="' . $post_urls['post'] . '">' . $lang['Post_new_pm'] . '</a>',
+		'reply_img' => '<a href="' . $post_urls['reply'] . '"><img src="' . $images['pm_replymsg'] . '" alt="' . $lang['Post_reply_pm'] . '" border="0" /></a>',
+		'reply' => '<a href="' . $post_urls['reply'] . '">' . $lang['Post_reply_pm'] . '</a>',
+		'quote_img' => '<a href="' . $post_urls['quote'] . '"><img src="' . $images['pm_quotemsg'] . '" alt="' . $lang['Post_quote_pm'] . '" border="0" /></a>',
+		'quote' => '<a href="' . $post_urls['quote'] . '">' . $lang['Post_quote_pm'] . '</a>',
+		'edit_img' => '<a href="' . $post_urls['edit'] . '"><img src="' . $images['pm_editmsg'] . '" alt="' . $lang['Edit_pm'] . '" border="0" /></a>',
+		'edit' => '<a href="' . $post_urls['edit'] . '">' . $lang['Edit_pm'] . '</a>'
+#
+#-----[ FIND ]------------------------------------------
+#
+	$profile_img = '<li><a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a></li>';
+	$profile = '<li><a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="' . $lang['Read_profile'] . '" title="' . $lang['Read_profile'] . '" border="0" /></a>';
+	$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$pm_img = '<li><a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a></li>';
+	$pm = '<li><a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="' . $lang['Send_private_message'] . '" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+	$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$email_img = '<li><a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a></li>';
+		$email = '<li><a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="' . $lang['Send_email'] . '" title="' . $lang['Send_email'] . '" border="0" /></a>';
+		$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$www_img = ( $privmsg['user_website'] ) ? '<li><a href="' . $privmsg['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a></li>' : '';
+	$www = ( $privmsg['user_website'] ) ? '<li><a href="' . $privmsg['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$www_img = ( $privmsg['user_website'] ) ? '<a href="' . $privmsg['user_website'] . '" target="_userwww"><img src="' . $images['icon_www'] . '" alt="' . $lang['Visit_website'] . '" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
+	$www = ( $privmsg['user_website'] ) ? '<a href="' . $privmsg['user_website'] . '" target="_userwww">' . $lang['Visit_website'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$icq_status_img = '<li><a href="http://wwp.icq.com/' . $privmsg['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $privmsg['user_icq'] . '&img=5" width="18" height="18" /></a></li>';
+		$icq_img = '<li><a href="http://wwp.icq.com/scripts/search.dll?to=' . $privmsg['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a></li>';
+		$icq =  '<li><a href="http://wwp.icq.com/scripts/search.dll?to=' . $privmsg['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$icq_status_img = '<a href="http://wwp.icq.com/' . $privmsg['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $privmsg['user_icq'] . '&img=5" width="18" height="18" border="0" /></a>';
+		$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $privmsg['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="' . $lang['ICQ'] . '" title="' . $lang['ICQ'] . '" border="0" /></a>';
+		$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $privmsg['user_icq'] . '">' . $lang['ICQ'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$aim_img = ( $privmsg['user_aim'] ) ? '<li><a href="aim:goim?screenname=' . $privmsg['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a></li>' : '';
+	$aim = ( $privmsg['user_aim'] ) ? '<li><a href="aim:goim?screenname=' . $privmsg['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$aim_img = ( $privmsg['user_aim'] ) ? '<a href="aim:goim?screenname=' . $privmsg['user_aim'] . '&amp;message=Hello+Are+you+there?"><img src="' . $images['icon_aim'] . '" alt="' . $lang['AIM'] . '" title="' . $lang['AIM'] . '" border="0" /></a>' : '';
+	$aim = ( $privmsg['user_aim'] ) ? '<a href="aim:goim?screenname=' . $privmsg['user_aim'] . '&amp;message=Hello+Are+you+there?">' . $lang['AIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$msn_img = ( $privmsg['user_msnm'] ) ? '<li><a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a></li>' : '';
+	$msn = ( $privmsg['user_msnm'] ) ? '<li><a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$msn_img = ( $privmsg['user_msnm'] ) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_msnm'] . '" alt="' . $lang['MSNM'] . '" title="' . $lang['MSNM'] . '" border="0" /></a>' : '';
+	$msn = ( $privmsg['user_msnm'] ) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$yim_img = ( $privmsg['user_yim'] ) ? '<li><a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $privmsg['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a></li>' : '';
+	$yim = ( $privmsg['user_yim'] ) ? '<li><a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $privmsg['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$yim_img = ( $privmsg['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $privmsg['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="' . $lang['YIM'] . '" title="' . $lang['YIM'] . '" border="0" /></a>' : '';
+	$yim = ( $privmsg['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $privmsg['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $username_from) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $username_from) . '</a>';
+	$search = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $username_from) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $username_from) . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_search'] . '" alt="' . sprintf($lang['Search_user_posts'], $username_from) . '" title="' . sprintf($lang['Search_user_posts'], $username_from) . '" border="0" /></a>';
+	$search = '<a href="' . $temp_url . '">' . sprintf($lang['Search_user_posts'], $username_from) . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&amp;mode=$mode" . $user_id, true));
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode" . $user_id, true));
+#
+#-----[ FIND ]------------------------------------------
+#
+		'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '">', '</a>'),
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '" target="_phpbbcode">', '</a>'),
+#
+#-----[ FIND ]------------------------------------------
+#
+$post_new_mesg_url = '<a href="' . append_sid("privmsg.$phpEx?mode=post") . '" title="' . $lang['Send_a_new_message'] . '"><img src="' . $images['post_new'] . '" alt="' . $lang['Send_a_new_message'] . '" /></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$post_new_mesg_url = '<a href="' . append_sid("privmsg.$phpEx?mode=post") . '"><img src="' . $images['post_new'] . '" alt="' . $lang['Send_a_new_message'] . '" border="0" /></a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+$post_pm_img = '<li><a href="' . $post_pm . '" title="' . $lang['Post_new_pm'] . '" class="newpost"><span class="offleft">' . $lang['Post_new_pm'] . '</span></a></li>';
+$post_pm = '<li><a href="' . $post_pm . '" title="' . $lang['Post_new_pm'] . '" class="newpost"><span class="offleft">' . $lang['Post_new_pm'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$post_pm_img = '<a href="' . $post_pm . '"><img src="' . $images['pm_postmsg'] . '" alt="' . $lang['Post_new_pm'] . '" border="0" /></a>';
+$post_pm = '<a href="' . $post_pm . '">' . $lang['Post_new_pm'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	'L_PRIVATE_MESSAGES_TITLE' => $lang['Private_Messages_Title'],
+	'L_PM_CAPTION' => $lang['Private_Message_Caption'],
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	
+#
+#-----[ FIND ]------------------------------------------
+#
+		$icon_flag = ( $flag == PRIVMSGS_NEW_MAIL || $flag == PRIVMSGS_UNREAD_MAIL ) ? '<span class="newposts"><strong class="offleft">' . $lang['Unread_message'] . '</strong></span>' : '<span class="nonewposts"><strong class="offleft">' . $lang['Read_message'] . '</strong></span>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$icon_flag = ( $flag == PRIVMSGS_NEW_MAIL || $flag == PRIVMSGS_UNREAD_MAIL ) ? $images['pm_unreadmsg'] : $images['pm_readmsg'];
+#
+#-----[ FIND ]------------------------------------------
+#
+			$msg_subject = '<strong>' . $msg_subject . '</strong>';
+			$msg_date = '<strong>' . $msg_date . '</strong>';
+			$msg_username = '<strong>' . $msg_username . '</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$msg_subject = '<b>' . $msg_subject . '</b>';
+			$msg_date = '<b>' . $msg_date . '</b>';
+			$msg_username = '<b>' . $msg_username . '</b>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+search.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005 
+// - Replaced <span><b>xxx</b></span> with <strong>xxx</strong>
+// 25 June 2005
+// - Incorporated phpBB 2.0.14 fixes
+// 30 September 2005
+// - Removed image for 'View Latest Post' and replaced with a text link
+// - Changed references of the image that dictate what type of post you are viewing (ie: Sticky, Announcement, etc.) to now be dictated by Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 7 May 2006
+// - Incorporate phpBB 2.0.20 fixes
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+											$hold_string = str_replace('<!-- #sh -->', '<strong>', $hold_string);
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+											$hold_string = str_replace('<!-- #sh -->', '<span style="color:#' . $theme['fontcolor3'] . '"><b>', $hold_string);
+#
+#-----[ FIND ]------------------------------------------
+#
+											$hold_string = str_replace('<!-- #eh -->', '</strong>', $hold_string);
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+											$hold_string = str_replace('<!-- #eh -->', '</b></span>', $hold_string);
+#
+#-----[ FIND ]------------------------------------------
+#
+								$message = preg_replace($highlight_match, '<strong>\1</strong>', $message);
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+								$message = preg_replace($highlight_match, '<span style="color:#' . $theme['fontcolor3'] . '"><b>\1</b></span>', $message);
+#
+#-----[ FIND ]------------------------------------------
+#
+				if ( $searchset[$i]['topic_status'] == TOPIC_MOVED )
+				{
+					$topic_type = $lang['Topic_Moved'] . ' ';
+					$topic_id = $searchset[$i]['topic_moved_id'];
+
+					$folder_image = "<span class='nonewposts'><strong class='offleft'>" . $lang['No_new_posts'] . " - </strong></span>";
+					$newest_post_img = '';
+				}
+				else
+				{
+					if ( $searchset[$i]['topic_status'] == TOPIC_LOCKED )
+					{
+						$folder = "<span class='locked'><strong class='offleft'>" . $lang['No_new_posts_locked'] . " - </strong></span>";
+						$folder_new = "<span class='lockednew'><strong class='offleft'>" . $lang['New_posts_locked'] . " - </strong></span>";
+						
+					}
+					else if ( $searchset[$i]['topic_type'] == POST_ANNOUNCE )
+					{
+						$folder = "<span class='announcement'><strong class='offleft'>" . $lang['Post_Announcement'] . " - </strong></span>";
+						$folder_new = "<span class='announcementnew'><strong class='offleft'>" . $lang['Post_Announcement_new'] . " - </strong></span>";
+					}
+					else if ( $searchset[$i]['topic_type'] == POST_STICKY )
+					{
+						$folder = "<span class='sticky'><strong class='offleft'>" . $lang['Post_Sticky'] . " - </strong></span>";
+						$folder_new = "<span class='stickynew'><strong class='offleft'>" . $lang['Post_Sticky_new'] . " - </strong></span>";
+					}
+					else
+					{
+						if ( $replies >= $board_config['hot_threshold'] )
+						{
+							$folder = "<span class='hot'><strong class='offleft'>" . $lang['No_new_posts_hot'] . " - </strong></span>";
+							$folder_new = "<span class='hotnewposts'><strong class='offleft'>" . $lang['New_posts_hot'] . " - </strong></span>";
+						}
+						else
+						{
+							$folder = "<span class='nonewposts'><strong class='offleft'>" . $lang['No_new_posts'] . " - </strong></span>";
+							$folder_new = "<span class='newposts'><strong class='offleft'>" . $lang['New_posts'] . " - </strong></span>";
+						}
+					}
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				if ( $searchset[$i]['topic_status'] == TOPIC_MOVED )
+				{
+					$topic_type = $lang['Topic_Moved'] . ' ';
+					$topic_id = $searchset[$i]['topic_moved_id'];
+
+					$folder_image = '<img src="' . $images['folder'] . '" alt="' . $lang['No_new_posts'] . '" />';
+					$newest_post_img = '';
+				}
+				else
+				{
+					if ( $searchset[$i]['topic_status'] == TOPIC_LOCKED )
+					{
+						$folder = $images['folder_locked'];
+						$folder_new = $images['folder_locked_new'];
+					}
+					else if ( $searchset[$i]['topic_type'] == POST_ANNOUNCE )
+					{
+						$folder = $images['folder_announce'];
+						$folder_new = $images['folder_announce_new'];
+					}
+					else if ( $searchset[$i]['topic_type'] == POST_STICKY )
+					{
+						$folder = $images['folder_sticky'];
+						$folder_new = $images['folder_sticky_new'];
+					}
+					else
+					{
+						if ( $replies >= $board_config['hot_threshold'] )
+						{
+							$folder = $images['folder_hot'];
+							$folder_new = $images['folder_hot_new'];
+						}
+						else
+						{
+							$folder = $images['folder'];
+							$folder_new = $images['folder_new'];
+						}
+					}
+#
+#-----[ FIND ]------------------------------------------
+#
+									$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '" title="' . $lang['View_newest_post'] . '" class="latestpostlink">' . $lang['View_newest_post'] . '</a> ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+									$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '"><img src="' . $images['icon_newest_reply'] . '" alt="' . $lang['View_newest_post'] . '" title="' . $lang['View_newest_post'] . '" border="0" /></a> ';
+#
+#-----[ FIND ]------------------------------------------
+#
+								$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '" title="' . $lang['View_newest_post'] . '" class="latestpostlink">' . $lang['View_newest_post'] . '</a> ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+								$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '"><img src="' . $images['icon_newest_reply'] . '" alt="' . $lang['View_newest_post'] . '" title="' . $lang['View_newest_post'] . '" border="0" /></a> ';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$last_post_url = '<a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $searchset[$i]['topic_last_post_id']) . '#userpostid' . $searchset[$i]['topic_last_post_id'] . '" title="' . $lang['View_latest_post'] . '" class="latestpostlink">' . $lang['View_latest_post'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$last_post_url = '<a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $searchset[$i]['topic_last_post_id']) . '#' . $searchset[$i]['topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" alt="' . $lang['View_latest_post'] . '" title="' . $lang['View_latest_post'] . '" border="0" /></a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	'L_SEARCH_RESULTS_CAPTION' => $lang['Search_Results_Caption'],
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+viewforum.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005 
+//	- Added id attributes to match with various label elements
+// 25 March 2005 
+//  - post_img now define the entire link. (ie: <a href="newtopic.php" title="Create a new topic" class="postnewtopic"><span>New Topic</span></a>). This allows the CSS to control the image used for these two items.
+// 25 March 2005 
+//  - Added new_topic_url to be accepted by POST_IMG.
+// 18 September 2005
+//  - Changed references of the image that dictate what type of post you are viewing (ie: Sticky, Announcement, etc.) to now be dictated by Style Sheet
+// 25 September 2005
+//  - Removed image for 'View Latest Post' and replaced with a text link
+// 2 December 2005
+//  - Removed image for 'View Newest Post' and replaced with a text link
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$select_topic_days = '<select id="ddlSelectTopicDays" name="topicdays">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$select_topic_days = '<select name="topicdays">';
+#
+#-----[ FIND ]------------------------------------------
+#
+// Marco Battilana 
+// 25 March 2005 - Added new_topic_url to be accepted by POST_IMG.
+$new_topic_url = append_sid("posting.$phpEx?mode=newtopic&amp;" . POST_FORUM_URL . "=$forum_id");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+	'POST_IMG' => ( $forum_row['forum_status'] == FORUM_LOCKED ) ? '<a href="' . $new_topic_url . '" title="' . $lang['Forum_locked'] . '" class="locked"><span>' . $lang['Forum_locked'] . '</span></a>' : '<a href="' . $new_topic_url . '" title="' . $lang['Post_new_topic'] . '" class="postnewtopic"><span>' . $lang['Post_new_topic'] . '</span></a>',	
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	'POST_IMG' => ( $forum_row['forum_status'] == FORUM_LOCKED ) ? $images['post_locked'] : $images['post_new'],
+#
+#-----[ FIND ]------------------------------------------
+#
+	'FOLDER_IMG' => '<span class="nonewpostsimg">' . $lang['No_new_posts'] . '</span>',
+	'FOLDER_NEW_IMG' => '<span class="newpostsimg">' . $lang['New_posts'] . '</span>',
+	'FOLDER_HOT_IMG' => '<span class="hotimg">' . $lang['No_new_posts_hot'] . '</span>',
+	'FOLDER_HOT_NEW_IMG' => '<span class="hotnewpostsimg">' . $lang['New_posts_hot'] . '</span>',
+	'FOLDER_LOCKED_IMG' => '<span class="lockedimg">' . $lang['No_new_posts_locked'] . '</span>',
+	'FOLDER_LOCKED_NEW_IMG' => '<span class="lockednewimg">' . $lang['New_posts_locked'] . '</span>',
+	'FOLDER_STICKY_IMG' => '<span class="stickyimg">' . $lang['Post_Sticky'] . '</span>',
+	'FOLDER_STICKY_NEW_IMG' => '<span class="stickynewimg">' . $lang['Post_Sticky_new'] . '</span>',
+	'FOLDER_ANNOUNCE_IMG' => '<span class="announceimg">' . $lang['Post_Announcement'] . '</span>',
+	'FOLDER_ANNOUNCE_NEW_IMG' => '<span class="announcenewimg">' . $lang['Post_Announcement_new'] . '</span>',
+	
+	'L_FORUM_NAME_CAPTION' => $lang['Forum_Name_Caption'],
+	'L_ICON_LEGEND_TITLE' => $lang['Icon_Legend_Title'],
+	
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	'FOLDER_IMG' => $images['folder'],
+	'FOLDER_NEW_IMG' => $images['folder_new'],
+	'FOLDER_HOT_IMG' => $images['folder_hot'],
+	'FOLDER_HOT_NEW_IMG' => $images['folder_hot_new'],
+	'FOLDER_LOCKED_IMG' => $images['folder_locked'],
+	'FOLDER_LOCKED_NEW_IMG' => $images['folder_locked_new'],
+	'FOLDER_STICKY_IMG' => $images['folder_sticky'],
+	'FOLDER_STICKY_NEW_IMG' => $images['folder_sticky_new'],
+	'FOLDER_ANNOUNCE_IMG' => $images['folder_announce'],
+	'FOLDER_ANNOUNCE_NEW_IMG' => $images['folder_announce_new'],	
+#
+#-----[ FIND ]------------------------------------------
+#
+		else
+		{
+			if( $topic_rowset[$i]['topic_type'] == POST_ANNOUNCE )
+			{
+				$folder = "<span class='announcement'><strong class='offleft'>" . $lang['Post_Announcement'] . " - </strong></span>";
+				$folder = "<span class='announcementnew'><strong class='offleft'>" . $lang['Post_Announcement_new'] . " - </strong></span>";
+			}
+			else if( $topic_rowset[$i]['topic_type'] == POST_STICKY )
+			{
+				$folder = "<span class='sticky'><strong class='offleft'>" . $lang['Post_Sticky'] . " - </strong></span>";
+				$folder = "<span class='stickynew'><strong class='offleft'>" . $lang['Post_Sticky_new'] . " - </strong></span>";
+			}
+			else if( $topic_rowset[$i]['topic_status'] == TOPIC_LOCKED )
+			{
+				$folder = "<span class='locked'><strong class='offleft'>" . $lang['No_new_posts_locked'] . " - </strong></span>";
+				$folder = "<span class='lockednew'><strong class='offleft'>" . $lang['New_posts_locked'] . " - </strong></span>";
+			}
+			else
+			{
+				if($replies >= $board_config['hot_threshold'])
+				{
+					$folder = "<span class='hot'><strong class='offleft'>" . $lang['No_new_posts_hot'] . " - </strong></span>";
+					$folder = "<span class='hotnewposts'><strong class='offleft'>" . $lang['New_posts_hot'] . " - </strong></span>";
+				}
+				else
+				{
+					$folder = "<span class='nonewposts'><strong class='offleft'>" . $lang['No_new_posts'] . " - </strong></span>";
+					$folder_new = "<span class='newposts'><strong class='offleft'>" . $lang['New_posts'] . " - </strong></span>";
+				}
+			}
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		else
+		{
+			if( $topic_rowset[$i]['topic_type'] == POST_ANNOUNCE )
+			{
+				$folder = $images['folder_announce'];
+				$folder_new = $images['folder_announce_new'];
+			}
+			else if( $topic_rowset[$i]['topic_type'] == POST_STICKY )
+			{
+				$folder = $images['folder_sticky'];
+				$folder_new = $images['folder_sticky_new'];
+			}
+			else if( $topic_rowset[$i]['topic_status'] == TOPIC_LOCKED )
+			{
+				$folder = $images['folder_locked'];
+				$folder_new = $images['folder_locked_new'];
+			}
+			else
+			{
+				if($replies >= $board_config['hot_threshold'])
+				{
+					$folder = $images['folder_hot'];
+					$folder_new = $images['folder_hot_new'];
+				}
+				else
+				{
+					$folder = $images['folder'];
+					$folder_new = $images['folder_new'];
+				}
+			}
+#
+#-----[ FIND ]------------------------------------------
+#
+							$newest_post_img = '- <a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '" title="' . $lang['View_newest_post'] . '" class="newestpostlink">' . $lang['View_newest_post'] . '</a> ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+							$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '"><img src="' . $images['icon_newest_reply'] . '" alt="' . $lang['View_newest_post'] . '" title="' . $lang['View_newest_post'] . '" border="0" /></a> ';
+#
+#-----[ FIND ]------------------------------------------
+#
+						$newest_post_img = '- <a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '" title="' . $lang['View_newest_post'] . '" class="newestpostlink">' . $lang['View_newest_post'] . '</a> ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+						$newest_post_img = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '"><img src="' . $images['icon_newest_reply'] . '" alt="' . $lang['View_newest_post'] . '" title="' . $lang['View_newest_post'] . '" border="0" /></a> ';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$last_post_url = '- <a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $topic_rowset[$i]['topic_last_post_id']) . '#userpostid' . $topic_rowset[$i]['topic_last_post_id'] . '" title="' . $lang['View_latest_post'] . '" class="latestpostlink">' . $lang['View_latest_post'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$last_post_url = '<a href="' . append_sid("viewtopic.$phpEx?"  . POST_POST_URL . '=' . $topic_rowset[$i]['topic_last_post_id']) . '#' . $topic_rowset[$i]['topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" alt="' . $lang['View_latest_post'] . '" title="' . $lang['View_latest_post'] . '" border="0" /></a>';
+
+
+	
+#
+#-----[ OPEN ]------------------------------------------
+# 
+viewonline.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana 
+// 28 March 2005 
+// - Replaced <i>xxx</i> with <em>xxx</em>
+// 07 July 2005
+// - Replaced <b>xxx</b> with <strong>xxx</strong>
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+	
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#	
+	'L_WHOSONLINE' => $lang['Who_is_Online'],
+	'L_ONLINE_CAPTION' => $lang['Online_Caption'],
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#	
+				$username = '<strong>' . $username . '</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$username = '<b style="color:#' . $theme['fontcolor3'] . '">' . $username . '</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$username = '<strong>' . $username . '</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$username = '<b style="color:#' . $theme['fontcolor2'] . '">' . $username . '</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$username = '<em>' . $username . '</em>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$username = '<i>' . $username . '</i>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+viewtopic.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana 
+// 25 March 2005 
+//  - Added title attributes to anchors and removed references to images.
+//  - Replaced <span><b>xxx</b></span> with <strong>xxx</strong>
+//  - Replaced images with anchors. Each anchor is classed as 'smallbutton' so the Style Sheet can dictate an image if you so desire.
+//  - Changed post_img, post_alt, reply_img and reply_alt to use only post_img and reply_img, respectfully. post_img and reply_img now define the entire link. (ie: <a href="newtopic.php" title="Create a new topic" class="postnewtopic"><span>New Topic</span></a>). This allows the CSS to control the image used for these two items.
+//  - Added critical update (as per 2.0.13)
+// 05 June 2005
+//  - Changed message items (quote, edit, delete, ip, profile, web, aim, etc.) to be encompassed by list elements. These are assumed to be part of an unordered list with viewtopic_body.tpl)
+// 25 June 2005
+// - Incorporated phpBB 2.0.14 fixes
+// - Incorporated phpBB 2.0.15 fixes
+// 04 July 2005
+// - Incorporated phpBB 2.0.16 fixes
+// 30 July 2005
+// - Incorporated phpBB 2.0.17 fixes
+// 28 August 2005
+// - As per the fix from 6 June 2005, each anchor now has a unique class assigned to differentiate the buttons. (IE: profile, pm, email, etc.) as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 20 September 2005
+// - For the moderator controls (delete topic, move topic, lock/unlock topic and split topic) each control now has a unique id assigned to differentiate the buttons as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$select_post_days = '<select id="ddlPostDays" name="postdays">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$select_post_days = '<select name="postdays">';
+#
+#-----[ FIND ]------------------------------------------
+#
+$select_post_order = '<select id="ddlPostOrder" name="postorder">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$select_post_order = '<select name="postorder">';
+#
+#-----[ FIND ]------------------------------------------
+#
+$reply_img = ( $forum_topic_data['forum_status'] == FORUM_LOCKED || $forum_topic_data['topic_status'] == TOPIC_LOCKED ) ? '<a href="' . $reply_topic_url . '" title="' . $lang['Topic_locked'] . '" class="locked"><span>' . $lang['Topic_locked'] . '</span></a>' : '<a href="' . $reply_topic_url . '" title="' . $lang['Reply_to_topic'] . '"  class="postreply"><span>' . $lang['Reply_to_topic'] . '</span></a>';
+
+$post_img = ( $forum_topic_data['forum_status'] == FORUM_LOCKED ) ? '<a href="' . $new_topic_url . '" title="' . $lang['Forum_locked'] . '" class="locked"><span>' . $lang['Forum_locked'] . '</span></a>' : '<a href="' . $new_topic_url . '" title="' . $lang['Post_new_topic'] . '" class="postnewtopic"><span>' . $lang['Post_new_topic'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$reply_img = ( $forum_topic_data['forum_status'] == FORUM_LOCKED || $forum_topic_data['topic_status'] == TOPIC_LOCKED ) ? $images['reply_locked'] : $images['reply_new'];
+$reply_alt = ( $forum_topic_data['forum_status'] == FORUM_LOCKED || $forum_topic_data['topic_status'] == TOPIC_LOCKED ) ? $lang['Topic_locked'] : $lang['Reply_to_topic'];
+$post_img = ( $forum_topic_data['forum_status'] == FORUM_LOCKED ) ? $images['post_locked'] : $images['post_new'];
+$post_alt = ( $forum_topic_data['forum_status'] == FORUM_LOCKED ) ? $lang['Forum_locked'] : $lang['Post_new_topic'];
+#
+#-----[ FIND ]------------------------------------------
+#
+if ( $is_auth['auth_mod'] )
+{
+	$s_auth_can .= sprintf($lang['Rules_moderate'], "<a href=\"modcp.$phpEx?" . POST_FORUM_URL . "=$forum_id&amp;sid=" . $userdata['session_id'] . '">', '</a>');
+	
+	$topic_mod .="<ul>";
+	$topic_mod .= "<li id='moddelete'><a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=delete&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Delete_topic'] . '"><span class="offleft">' . $lang['Delete_topic'] . '</span></a></li>';
+
+	$topic_mod .= "<li id='modmove'><a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=move&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Move_topic'] . '"><span class="offleft">' . $lang['Move_topic'] . '</span></a></li>';
+
+	$topic_mod .= ( $forum_topic_data['topic_status'] == TOPIC_UNLOCKED ) ? "<li id='modlock'><a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=lock&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Lock_topic'] . '"><span class="offleft">' . $lang['Lock_topic'] . '</span></a></li>' : "<li id='modunlock'><a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=unlock&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Unlock_topic'] . '"><span class="offleft">' . $lang['Unlock_topic'] . '</span></a></li>';
+
+	$topic_mod .= "<li id='modsplit'><a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=split&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Split_topic'] . '"><span class="offleft">' . $lang['Split_topic'] . '</span></a></li>';
+	$topic_mod .="</ul>";
+}
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+if ( $is_auth['auth_mod'] )
+{
+	$s_auth_can .= sprintf($lang['Rules_moderate'], "<a href=\"modcp.$phpEx?" . POST_FORUM_URL . "=$forum_id&amp;sid=" . $userdata['session_id'] . '">', '</a>');
+
+	$topic_mod .= "<a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=delete&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_mod_delete'] . '" alt="' . $lang['Delete_topic'] . '" title="' . $lang['Delete_topic'] . '" border="0" /></a>&nbsp;';
+
+	$topic_mod .= "<a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=move&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_mod_move'] . '" alt="' . $lang['Move_topic'] . '" title="' . $lang['Move_topic'] . '" border="0" /></a>&nbsp;';
+
+	$topic_mod .= ( $forum_topic_data['topic_status'] == TOPIC_UNLOCKED ) ? "<a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=lock&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_mod_lock'] . '" alt="' . $lang['Lock_topic'] . '" title="' . $lang['Lock_topic'] . '" border="0" /></a>&nbsp;' : "<a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=unlock&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_mod_unlock'] . '" alt="' . $lang['Unlock_topic'] . '" title="' . $lang['Unlock_topic'] . '" border="0" /></a>&nbsp;';
+
+	$topic_mod .= "<a href=\"modcp.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;mode=split&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_mod_split'] . '" alt="' . $lang['Split_topic'] . '" title="' . $lang['Split_topic'] . '" border="0" /></a>&nbsp;';
+}
+#
+#-----[ FIND ]------------------------------------------
+#
+		$s_watching_topic_img = ( isset($images['topic_un_watch']) ) ? "<a href=\"viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;unwatch=topic&amp;start=$start&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Stop_watching_topic'] . '"><img src="' . $images['topic_un_watch'] . '" alt="' . $lang['Stop_watching_topic'] . '" title="' . $lang['Stop_watching_topic'] . '" /></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$s_watching_topic_img = ( isset($images['topic_un_watch']) ) ? "<a href=\"viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;unwatch=topic&amp;start=$start&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['topic_un_watch'] . '" alt="' . $lang['Stop_watching_topic'] . '" title="' . $lang['Stop_watching_topic'] . '" border="0"></a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$s_watching_topic_img = ( isset($images['Topic_watch']) ) ? "<a href=\"viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;watch=topic&amp;start=$start&amp;sid=" . $userdata['session_id'] . '" title="' . $lang['Start_watching_topic'] . '"><img src="' . $images['Topic_watch'] . '" alt="' . $lang['Start_watching_topic'] . '" title="' . $lang['Start_watching_topic'] . '" /></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$s_watching_topic_img = ( isset($images['Topic_watch']) ) ? "<a href=\"viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;watch=topic&amp;start=$start&amp;sid=" . $userdata['session_id'] . '"><img src="' . $images['Topic_watch'] . '" alt="' . $lang['Start_watching_topic'] . '" title="' . $lang['Start_watching_topic'] . '" border="0"></a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<div class="avatar"><img src="' . $board_config['avatar_path'] . '/' . $postrow[$i]['user_avatar'] . '" alt="" /></div>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<div class="avatar"><img src="' . $postrow[$i]['user_avatar'] . '" alt="" /></div>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<div class="avatar"><img src="' . $board_config['avatar_gallery_path'] . '/' . $postrow[$i]['user_avatar'] . '" alt="" /></div>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$rank_image = ( $ranksrow[$j]['rank_image'] ) ? '<img src="' . $ranksrow[$j]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" /><br />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$rank_image = ( $ranksrow[$j]['rank_image'] ) ? '<img src="' . $ranksrow[$j]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" border="0" /><br />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$rank_image = ( $ranksrow[$j]['rank_image'] ) ? '<img src="' . $ranksrow[$j]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" /><br />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$rank_image = ( $ranksrow[$j]['rank_image'] ) ? '<img src="' . $ranksrow[$j]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" border="0" /><br />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$profile_img = '<li><a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a></li>';
+		$profile = '<li><a href="' . $temp_url . '" title="' . $lang['Read_profile'] . '" class="smallbutton-profile"><span class="offleft">' . $lang['Read_profile'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="' . $lang['Read_profile'] . '" title="' . $lang['Read_profile'] . '" border="0" /></a>';
+		$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$pm_img = '<li><a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a></li>';
+		$pm = '<li><a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="' . $lang['Send_private_message'] . '" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+		$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$email_img = '<li><a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a></li>';
+			$email = '<li><a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="' . $lang['Send_email'] . '" title="' . $lang['Send_email'] . '" border="0" /></a>';
+			$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$www_img = ( $postrow[$i]['user_website'] ) ? '<li><a href="' . $postrow[$i]['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a></li>' : '';
+		$www = ( $postrow[$i]['user_website'] ) ? '<li><a href="' . $postrow[$i]['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$www_img = ( $postrow[$i]['user_website'] ) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww"><img src="' . $images['icon_www'] . '" alt="' . $lang['Visit_website'] . '" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
+		$www = ( $postrow[$i]['user_website'] ) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww">' . $lang['Visit_website'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$icq_status_img = '<li><a href="http://wwp.icq.com/' . $postrow[$i]['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $postrow[$i]['user_icq'] . '&img=5" width="18" height="18" /></a></li>';
+			$icq_img = '<li><a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a></li>';
+			$icq =  '<li><a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$icq_status_img = '<a href="http://wwp.icq.com/' . $postrow[$i]['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $postrow[$i]['user_icq'] . '&img=5" width="18" height="18" border="0" /></a>';
+			$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="' . $lang['ICQ'] . '" title="' . $lang['ICQ'] . '" border="0" /></a>';
+			$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '">' . $lang['ICQ'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$aim_img = ( $postrow[$i]['user_aim'] ) ? '<li><a href="aim:goim?screenname=' . $postrow[$i]['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a></li>' : '';
+		$aim = ( $postrow[$i]['user_aim'] ) ? '<li><a href="aim:goim?screenname=' . $postrow[$i]['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$aim_img = ( $postrow[$i]['user_aim'] ) ? '<a href="aim:goim?screenname=' . $postrow[$i]['user_aim'] . '&amp;message=Hello+Are+you+there?"><img src="' . $images['icon_aim'] . '" alt="' . $lang['AIM'] . '" title="' . $lang['AIM'] . '" border="0" /></a>' : '';
+		$aim = ( $postrow[$i]['user_aim'] ) ? '<a href="aim:goim?screenname=' . $postrow[$i]['user_aim'] . '&amp;message=Hello+Are+you+there?">' . $lang['AIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$msn_img = ( $postrow[$i]['user_msnm'] ) ? '<li><a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a></li>' : '';
+		$msn = ( $postrow[$i]['user_msnm'] ) ? '<li><a href="' . $temp_url . '" title="' . $lang['MSNM'] . '" class="smallbutton-msnm"><span class="offleft">' . $lang['MSNM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$msn_img = ( $postrow[$i]['user_msnm'] ) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_msnm'] . '" alt="' . $lang['MSNM'] . '" title="' . $lang['MSNM'] . '" border="0" /></a>' : '';
+		$msn = ( $postrow[$i]['user_msnm'] ) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$yim_img = ( $postrow[$i]['user_yim'] ) ? '<li><a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a></li>' : '';
+		$yim = ( $postrow[$i]['user_yim'] ) ? '<li><a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$yim_img = ( $postrow[$i]['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="' . $lang['YIM'] . '" title="' . $lang['YIM'] . '" border="0" /></a>' : '';
+		$yim = ( $postrow[$i]['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$quote_img = '<li><a href="' . $temp_url . '" title="' . $lang['Reply_with_quote'] . '" class="smallbutton-quote"><span class="offleft">' . $lang['Reply_with_quote'] . '</span></a></li>';
+	$quote = '<li><a href="' . $temp_url . '" title="' . $lang['Reply_with_quote'] . '" class="smallbutton-quote"><span class="offleft">' . $lang['Reply_with_quote'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$quote_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_quote'] . '" alt="' . $lang['Reply_with_quote'] . '" title="' . $lang['Reply_with_quote'] . '" border="0" /></a>';
+	$quote = '<a href="' . $temp_url . '">' . $lang['Reply_with_quote'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '" class="smallbutton-search"><span class="offleft">' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '</span></a>';
+	$search = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '" class="smallbutton-search"><span class="offleft">' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$search_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_search'] . '" alt="' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '" title="' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '" border="0" /></a>';
+	$search = '<a href="' . $temp_url . '">' . sprintf($lang['Search_user_posts'], $postrow[$i]['username']) . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$edit_img = '<li><a href="' . $temp_url . '" title="' . $lang['Edit_delete_post'] . '" class="smallbutton-edit"><span class="offleft">' . $lang['Edit_delete_post'] . '</span></a></li>';
+		$edit = '<li><a href="' . $temp_url . '" title="' . $lang['Edit_delete_post'] . '" class="smallbutton-edit"><span class="offleft">' . $lang['Edit_delete_post'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$edit_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_edit'] . '" alt="' . $lang['Edit_delete_post'] . '" title="' . $lang['Edit_delete_post'] . '" border="0" /></a>';
+		$edit = '<a href="' . $temp_url . '">' . $lang['Edit_delete_post'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$ip_img = '<li><a href="' . $temp_url . '" title="' . $lang['View_IP'] . '" class="smallbutton-ip"><span class="offleft">' . $lang['View_IP'] . '</span></a></li>';
+		$ip = '<li><a href="' . $temp_url . '" title="' . $lang['View_IP'] . '" class="smallbutton-ip"><span class="offleft">' . $lang['View_IP'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$ip_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_ip'] . '" alt="' . $lang['View_IP'] . '" title="' . $lang['View_IP'] . '" border="0" /></a>';
+		$ip = '<a href="' . $temp_url . '">' . $lang['View_IP'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$delpost_img = '<li><a href="' . $temp_url . '" title="' . $lang['Delete_post'] . '" class="smallbutton-delete"><span class="offleft">' . $lang['Delete_post'] . '</span></a></li>';
+		$delpost = '<li><a href="' . $temp_url . '" title="' . $lang['Delete_post'] . '" class="smallbutton-delete"><span class="offleft">' . $lang['Delete_post'] . '</span></a></li>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$delpost_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['Delete_post'] . '" title="' . $lang['Delete_post'] . '" border="0" /></a>';
+		$delpost = '<a href="' . $temp_url . '">' . $lang['Delete_post'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$delpost_img = '<a href="' . $temp_url . '" title="' . $lang['Delete_post'] . '" class="smallbutton-delete"><span class="offleft">' . $lang['Delete_post'] . '</span></a>';
+			$delpost = '<a href="' . $temp_url . '" title="' . $lang['Delete_post'] . '" class="smallbutton-delete"><span class="offleft">' . $lang['Delete_post'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$delpost_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['Delete_post'] . '" title="' . $lang['Delete_post'] . '" border="0" /></a>';
+			$delpost = '<a href="' . $temp_url . '">' . $lang['Delete_post'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+		$message = preg_replace('#(?!<.*)(?<!\w)(' . $highlight_match . ')(?!\w|[^<>]*>)#i', '<strong>\1</strong>', $message);
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$message = preg_replace('#(?!<.*)(?<!\w)(' . $highlight_match . ')(?!\w|[^<>]*>)#i', '<b style="color:#'.$theme['fontcolor3'].'">\1</b>', $message);
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/bbcode.php
+#
+#-----[ FIND ]------------------------------------------
+# 
+// Changes for phpBB WASO
+// Marco Battilana
+// 6 June 2005
+// - Removed multiple instances of the border attribute
+// 25 June 2005
+// - Incorporated phpBB 2.0.15 fixes
+// 04 July 2005
+// - Incorporated phpBB 2.0.16 fixes
+// 30 July 2005
+// - Incorporated phpBB 2.0.17 fixes
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+
+#
+#-----[ FIND ]------------------------------------------
+# 
+			$repl[] = '<img src="'. $board_config['smilies_path'] . '/' . $smilies[$i]['smile_url'] . '" alt="' . $smilies[$i]['emoticon'] . '" />';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+# 
+			$repl[] = '<img src="'. $board_config['smilies_path'] . '/' . $smilies[$i]['smile_url'] . '" alt="' . $smilies[$i]['emoticon'] . '" border="0" />';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/functions.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005 
+// 	- Replaced <b>xxx</b> with <strong>xxx</strong> 
+// 28 March 2005
+//  - Added id attribute of 'ddljumpbox' to select element
+// 30 July 2005
+// - Incorporated phpBB 2.0.17 fixes
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 7 May 2006
+// - Incorporated phpBB 2.0.20 fixes
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+		$boxstring = '<select name="' . POST_FORUM_URL . '" id="ddljumpbox" onchange="if(this.options[this.selectedIndex].value != -1){ forms[\'jumpbox\'].submit() }"><option value="-1">' . $lang['Select_forum'] . '</option>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$boxstring = '<select name="' . POST_FORUM_URL . '" onchange="if(this.options[this.selectedIndex].value != -1){ forms[\'jumpbox\'].submit() }"><option value="-1">' . $lang['Select_forum'] . '</option>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$page_string .= ( $i == $on_page ) ? '<strong>' . $i . '</strong>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$page_string .= ( $i == $on_page ) ? '<b>' . $i . '</b>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$page_string .= ($i == $on_page) ? '<strong>' . $i . '</strong>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$page_string .= ($i == $on_page) ? '<b>' . $i . '</b>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$page_string .= ( $i == $on_page ) ? '<strong>' . $i . '</strong>'  : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$page_string .= ( $i == $on_page ) ? '<b>' . $i . '</b>'  : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$page_string .= ( $i == $on_page ) ? '<strong>' . $i . '</strong>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$page_string .= ( $i == $on_page ) ? '<b>' . $i . '</b>' : '<a href="' . append_sid($base_url . "&amp;start=" . ( ( $i - 1 ) * $per_page ) ) . '">' . $i . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+				$msg_title = 'phpBB : <strong>' . $lang['Critical_Error'] . '</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+				$msg_title = 'phpBB : <b>' . $lang['Critical_Error'] . '</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$msg_text = $msg_text . '<br /><br /><strong>DEBUG MODE</strong>' . $debug_text;
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$msg_text = $msg_text . '<br /><br /><b><u>DEBUG MODE</u></b>' . $debug_text;
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/functions_admin.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 06 July 2005 
+//	- Added id attribute to select element to match with label
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+	$forum_list = ( $forum_list == '' ) ? '<option value="-1">-- ! No Forums ! --</option>' : '<select name="' . $box_name . '" id="ddlForumSelect">' . $forum_list . '</select>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$forum_list = ( $forum_list == '' ) ? '<option value="-1">-- ! No Forums ! --</option>' : '<select name="' . $box_name . '">' . $forum_list . '</select>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/functions_search.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005
+// 	- Changed to encompass 2 character search.
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+		// 25 March 2005
+		// 	- Changed to encompass 2 character search.
+		$entry = preg_replace('/[ ]([\S]{1}|[\S]{21,})[ ]/',' ', $entry);
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		$entry = preg_replace('/[ ]([\S]{1,2}|[\S]{21,})[ ]/',' ', $entry);
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/functions_selects.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 28 March 2005
+//  - Added id attributes to select elements
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+	$lang_select = '<select id="ddlBoardLanguage" name="' . $select_name . '">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$lang_select = '<select name="' . $select_name . '">';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$style_select = '<select id="ddlBoardStyle" name="' . $select_name . '">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$style_select = '<select name="' . $select_name . '">';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$tz_select = '<select id="ddlTimeZone" name="' . $select_name . '">';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$tz_select = '<select name="' . $select_name . '">';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/page_header.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 6 June 2005
+// - Changed <b> to <strong>, <i> to <em> and replaced references of inline span styles to span classes. CSS to dictate.
+// 25 June 2005
+// - Incorporated phpBB 2.0.14 fixes
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+// 30 December 2005
+// - Added title attributes to account for a further descrption of when a user is an Administrator or a Moderator
+// 18 June 2006
+// - Added $lang variables to account for the different style sheet names
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+					$row['username'] = '<span class="administrator" title="' . $lang['Admin_online_title'] . '">' . $row['username'] . '</span>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$row['username'] = '<b>' . $row['username'] . '</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+					$row['username'] = '<span class="moderator" title="' . $lang['Moderator_online_title'] . '">' . $row['username'] . '</span>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$row['username'] = '<b>' . $row['username'] . '</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+					$user_online_link = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $row['user_id']) . '">' . $row['username'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$user_online_link = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $row['user_id']) . '"' . $style_color .'>' . $row['username'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+					$user_online_link = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $row['user_id']) . '">' . $row['username'] . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+					$user_online_link = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $row['user_id']) . '"' . $style_color .'><i>' . $row['username'] . '</i></a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	'L_SKIP_TO_CONTENT' => $lang['skip_to_content'],
+	'L_WASO_DEFAULT_STYLESHEET' => $lang['Default_Style_Sheet'],
+	'L_WASO_HIGH_CONTRAST_STYLE_SHEET' => $lang['High_Contrast_Style_Sheet'],
+	'L_WASO_DOCUMENT_STRUCTURE_STYLE_SHEET' =>$lang['Document_Structure_Style_Sheet'],
+	'L_WASO_LARGER_TEXT_STYLE_SHEET' => $lang['Larger_Text_Style_Sheet'],
+	'L_WASO_FULL_SCREEN_WIDTH_STYLE_SHEET' => $lang['Full_Screen_Width_Style_Sheet'],
+	'L_WASO_SUBSILVER_WASO_STYLE_SHEET' => $lang['SubSilver_WASO_Style_Sheet'],
+	'L_WASO_NO_STYLE_SHEET' => $lang['No_Style_Sheet'],	
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	
+#
+#-----[ FIND ]------------------------------------------
+#
+	'L_WHOSONLINE_ADMIN' => sprintf($lang['Admin_online_color'], '<span class="administrator">', '</span>'),
+	'L_WHOSONLINE_MOD' => sprintf($lang['Mod_online_color'], '<span class="moderator">', '</span>'),
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	'L_WHOSONLINE_ADMIN' => sprintf($lang['Admin_online_color'], '<span style="color:#' . $theme['fontcolor3'] . '">', '</span>'),
+	'L_WHOSONLINE_MOD' => sprintf($lang['Mod_online_color'], '<span style="color:#' . $theme['fontcolor2'] . '">', '</span>'),
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/page_tail.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana 
+// 8 September 2005 
+// - Removed two <br/> elements after the admin link
+// - Added title and class attribute to anchor
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$admin_link = ( $userdata['user_level'] == ADMIN ) ? '<li><a href="admin/index.' . $phpEx . '?sid=' . $userdata['session_id'] . '" title="' . $lang['Admin_panel'] . '" class="adminlink">' . $lang['Admin_panel'] . '</a></li>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$admin_link = ( $userdata['user_level'] == ADMIN ) ? '<a href="admin/index.' . $phpEx . '?sid=' . $userdata['session_id'] . '">' . $lang['Admin_panel'] . '</a><br /><br />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+	'ADMIN_LINK' => $admin_link,
+	'L_PHPBB_WASO_CREATOR' => $lang['phpbb_waso_creator'],
+	'L_PHPBB_WASO_ABOUT' => $lang['phpbb_waso_about'],
+	'L_PHPBB_WASO_ABOUT_TITLE' => $lang['phpbb_waso_about_title'],
+	'L_PHPBB_WASO_VALIDATOR' => $lang['phpbb_waso_validator'],
+	'L_PHPBB_WASO_VALIDATOR_TITLE' => $lang['phpbb_waso_validator_title'],
+	'L_PHPBB_WASO_CSS_VALIDATOR_TITLE' => $lang['phpbb_waso_css_validator_title'],
+	'L_PHPBB_WASO_SECTION_508' => $lang['phpbb_waso_section_508'],
+	'L_PHPBB_WASO_WAI_TITLE' => $lang['phpbb_waso_wai_title'])
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	'ADMIN_LINK' => $admin_link)
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/usercp_register.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005
+// - Added 'title' attributes to anchors
+// - Removed target='_phpbbcode'
+// 25 June 2005
+// - Incorporated phpBB 2.0.15 fixes
+// 05 July 2005
+// - Incorporated phpBB 2.0.16 fixes
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 17 June 2006
+// - Incorporated phpBB 2.0.21 fixes
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+		else if ( $username != $userdata['username'] || $mode == 'register' )
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		else if ( $username != $userdata['username'] || $mode == 'register')
+#
+#-----[ FIND ]------------------------------------------
+#
+		'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '">', '</a>'),
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		'BBCODE_STATUS' => sprintf($bbcode_status, '<a href="' . append_sid("faq.$phpEx?mode=bbcode") . '" target="_phpbbcode">', '</a>'),
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+includes/usercp_viewprofile.php
+#
+#-----[ FIND ]------------------------------------------
+#
+// Changes for phpBB WASO
+// Marco Battilana
+// 6 June 2005
+// - Replaced images with anchors. Each anchor is classed as 'smallbutton' so the Style Sheet can dictate an image if you so desire.
+// 25 June 2005
+// - Incorporated phpBB 2.0.15 fixes
+// 30 July 2005
+// - Incorporated phpBB 2.0.17 fixes
+// 28 August 2005
+// - As per the fix from 6 June 2005, each anchor now has a unique class assigned to differentiate the buttons. (IE: profile, pm, email, etc.) as well as a span element within if you wish to modify the text inside the anchor with the Style Sheet
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added $lang variables to account for Internationalization
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $profiledata['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_upload'] ) ? '<img src="' . $board_config['avatar_path'] . '/' . $profiledata['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $profiledata['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_remote'] ) ? '<img src="' . $profiledata['user_avatar'] . '" alt="" border="0" />' : '';	
+#
+#-----[ FIND ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $profiledata['user_avatar'] . '" alt="" />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $profiledata['user_avatar'] . '" alt="" border="0" />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$rank_image = ( $ranksrow[$i]['rank_image'] ) ? '<img src="' . $ranksrow[$i]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" /><br />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$rank_image = ( $ranksrow[$i]['rank_image'] ) ? '<img src="' . $ranksrow[$i]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" border="0" /><br />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+			$rank_image = ( $ranksrow[$i]['rank_image'] ) ? '<img src="' . $ranksrow[$i]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" /><br />' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+			$rank_image = ( $ranksrow[$i]['rank_image'] ) ? '<img src="' . $ranksrow[$i]['rank_image'] . '" alt="' . $poster_rank . '" title="' . $poster_rank . '" border="0" /><br />' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+$pm_img = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+$pm = '<a href="' . $temp_url . '" title="' . $lang['Send_private_message'] . '" class="smallbutton-pm"><span class="offleft">' . $lang['Send_private_message'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="' . $lang['Send_private_message'] . '" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$email_img = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+	$email = '<a href="' . $email_uri . '" title="' . $lang['Send_email'] . '" class="smallbutton-email"><span class="offleft">' . $lang['Send_email'] . '</span></a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="' . $lang['Send_email'] . '" title="' . $lang['Send_email'] . '" border="0" /></a>';
+	$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+$www_img = ( $profiledata['user_website'] ) ? '<a href="' . $profiledata['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $lang['Visit_website'] . '</span></a>' : '';
+$www = ( $profiledata['user_website'] ) ? '<a href="' . $profiledata['user_website'] . '" title="' . $lang['Visit_website'] . '" class="smallbutton-www"><span class="offleft">' . $profiledata['user_website'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$www_img = ( $profiledata['user_website'] ) ? '<a href="' . $profiledata['user_website'] . '" target="_userwww"><img src="' . $images['icon_www'] . '" alt="' . $lang['Visit_website'] . '" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '&nbsp;';
+$www = ( $profiledata['user_website'] ) ? '<a href="' . $profiledata['user_website'] . '" target="_userwww">' . $profiledata['user_website'] . '</a>' : '&nbsp;';
+#
+#-----[ FIND ]------------------------------------------
+#
+	$icq_status_img = '<a href="http://wwp.icq.com/' . $profiledata['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $profiledata['user_icq'] . '&img=5" width="18" height="18" /></a>';
+	$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $profiledata['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';
+	$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $profiledata['user_icq'] . '" title="' . $lang['ICQ'] . '" class="smallbutton-icq"><span class="offleft">' . $lang['ICQ'] . '</span></a>';	
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	$icq_status_img = '<a href="http://wwp.icq.com/' . $profiledata['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $profiledata['user_icq'] . '&img=5" width="18" height="18" border="0" /></a>';
+	$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $profiledata['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="' . $lang['ICQ'] . '" title="' . $lang['ICQ'] . '" border="0" /></a>';
+	$icq =  '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $profiledata['user_icq'] . '">' . $lang['ICQ'] . '</a>';
+#
+#-----[ FIND ]------------------------------------------
+#
+$aim_img = ( $profiledata['user_aim'] ) ? '<a href="aim:goim?screenname=' . $profiledata['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+$aim = ( $profiledata['user_aim'] ) ? '<a href="aim:goim?screenname=' . $profiledata['user_aim'] . '&amp;message=Hello+Are+you+there?" title="' . $lang['AIM'] . '" class="smallbutton-aim"><span class="offleft">' . $lang['AIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$aim_img = ( $profiledata['user_aim'] ) ? '<a href="aim:goim?screenname=' . $profiledata['user_aim'] . '&amp;message=Hello+Are+you+there?"><img src="' . $images['icon_aim'] . '" alt="' . $lang['AIM'] . '" title="' . $lang['AIM'] . '" border="0" /></a>' : '&nbsp;';
+$aim = ( $profiledata['user_aim'] ) ? '<a href="aim:goim?screenname=' . $profiledata['user_aim'] . '&amp;message=Hello+Are+you+there?">' . $lang['AIM'] . '</a>' : '&nbsp;';
+#
+#-----[ FIND ]------------------------------------------
+#
+$yim_img = ( $profiledata['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $profiledata['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+$yim = ( $profiledata['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $profiledata['user_yim'] . '&amp;.src=pg" title="' . $lang['YIM'] . '" class="smallbutton-yim"><span class="offleft">' . $lang['YIM'] . '</span></a>' : '';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$yim_img = ( $profiledata['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $profiledata['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="' . $lang['YIM'] . '" title="' . $lang['YIM'] . '" border="0" /></a>' : '';
+$yim = ( $profiledata['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $profiledata['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
+#
+#-----[ FIND ]------------------------------------------
+#
+$search_img = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '</a>';
+$search = '<a href="' . $temp_url . '" title="' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '" class="smallbutton-search">' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '</a>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$search_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_search'] . '" alt="' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '" title="' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '" border="0" /></a>';
+$search = '<a href="' . $temp_url . '">' . sprintf($lang['Search_user_posts'], $profiledata['username']) . '</a>';
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+language/lang_english/lang_bbcode.php
+#
+#-----[ FIND ]------------------------------------------
+#
+
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005
+//	- Changed <b>xxx</b> to <strong>xxx</strong>
+// 28 March 2005
+//  - Replaced <u>xxx</u> and <i>xxx</i> with <em>xxx</em> and removed references to underlining text
+//  - Removed multiple instances of the target attribute
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("How to create bold and italic text", "BBCode includes tags to allow you to quickly change the basic style of your text. This is achieved in the following ways: <ul><li>To make a piece of text bold enclose it in <strong>[b][/b]</strong>, eg. <br /><br /><strong>[b]</strong>Hello<strong>[/b]</strong><br /><br />will become <strong>Hello</strong></li><li>For underlining use <strong>[u][/u]</strong>, for example:<br /><br /><strong>[u]</strong>Good Morning<strong>[/u]</strong><br /><br />becomes <em>Good Morning</em></li><li>To italicise text use <strong>[i][/i]</strong>, eg.<br /><br />This is <strong>[i]</strong>Great!<strong>[/i]</strong><br /><br />would give This is <em>Great!</em></li></ul>");
+$faq[] = array("How to change the text colour or size", "To alter the color or size of your text the following tags can be used. Keep in mind that how the output appears will depend on the viewers browser and system: <ul><li>Changing the colour of text is achieved by wrapping it in <strong>[color=][/color]</strong>. You can specify either a recognised colour name (eg. red, blue, yellow, etc.) or the hexadecimal triplet alternative, eg. #FFFFFF, #000000. For example, to create red text you could use:<br /><br /><strong>[color=red]</strong>Hello!<strong>[/color]</strong><br /><br />or<br /><br /><strong>[color=#FF0000]</strong>Hello!<strong>[/color]</strong><br /><br />will both output <span style=\"color:red\">Hello!</span></li><li>Changing the text size is achieved in a similar way using <strong>[size=][/size]</strong>. This tag is dependent on the template you are using but the recommended format is a numerical value representing the text size in pixels, starting at 1 (so tiny you will not see it) through to 29 (very large). For example:<br /><br /><strong>[size=9]</strong>SMALL<strong>[/size]</strong><br /><br />will generally be <span style=\"font-size:9px\">SMALL</span><br /><br />whereas:<br /><br /><strong>[size=24]</strong>HUGE!<strong>[/size]</strong><br /><br />will be <span style=\"font-size:24px\">HUGE!</span></li></ul>");
+$faq[] = array("Can I combine formatting tags?", "Yes, of course you can; for example to get someones attention you may write:<br /><br /><strong>[size=18][color=red][b]</strong>LOOK AT ME!<strong>[/b][/color][/size]</strong><br /><br />this would output <span style=\"color:red;font-size:18px\"><strong>LOOK AT ME!</strong></span><br /><br />We don't recommend you output lots of text that looks like this, though! Remember that it is up to you, the poster, to ensure that tags are closed correctly. For example, the following is incorrect:<br /><br /><strong>[b][u]</strong>This is wrong<strong>[/b][/u]</strong>");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("How to create bold, italic and underlined text", "BBCode includes tags to allow you to quickly change the basic style of your text. This is achieved in the following ways: <ul><li>To make a piece of text bold enclose it in <b>[b][/b]</b>, eg. <br /><br /><b>[b]</b>Hello<b>[/b]</b><br /><br />will become <b>Hello</b></li><li>For underlining use <b>[u][/u]</b>, for example:<br /><br /><b>[u]</b>Good Morning<b>[/u]</b><br /><br />becomes <u>Good Morning</u></li><li>To italicise text use <b>[i][/i]</b>, eg.<br /><br />This is <b>[i]</b>Great!<b>[/i]</b><br /><br />would give This is <i>Great!</i></li></ul>");
+$faq[] = array("How to change the text colour or size", "To alter the color or size of your text the following tags can be used. Keep in mind that how the output appears will depend on the viewers browser and system: <ul><li>Changing the colour of text is achieved by wrapping it in <b>[color=][/color]</b>. You can specify either a recognised colour name (eg. red, blue, yellow, etc.) or the hexadecimal triplet alternative, eg. #FFFFFF, #000000. For example, to create red text you could use:<br /><br /><b>[color=red]</b>Hello!<b>[/color]</b><br /><br />or<br /><br /><b>[color=#FF0000]</b>Hello!<b>[/color]</b><br /><br />will both output <span style=\"color:red\">Hello!</span></li><li>Changing the text size is achieved in a similar way using <b>[size=][/size]</b>. This tag is dependent on the template you are using but the recommended format is a numerical value representing the text size in pixels, starting at 1 (so tiny you will not see it) through to 29 (very large). For example:<br /><br /><b>[size=9]</b>SMALL<b>[/size]</b><br /><br />will generally be <span style=\"font-size:9px\">SMALL</span><br /><br />whereas:<br /><br /><b>[size=24]</b>HUGE!<b>[/size]</b><br /><br />will be <span style=\"font-size:24px\">HUGE!</span></li></ul>");
+$faq[] = array("Can I combine formatting tags?", "Yes, of course you can; for example to get someones attention you may write:<br /><br /><b>[size=18][color=red][b]</b>LOOK AT ME!<b>[/b][/color][/size]</b><br /><br />this would output <span style=\"color:red;font-size:18px\"><b>LOOK AT ME!</b></span><br /><br />We don't recommend you output lots of text that looks like this, though! Remember that it is up to you, the poster, to ensure that tags are closed correctly. For example, the following is incorrect:<br /><br /><b>[b][u]</b>This is wrong<b>[/b][/u]</b>");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Quoting text in replies", "There are two ways you can quote text: with a reference or without.<ul><li>When you utilise the Quote function to reply to a post on the board you should notice that the post text is added to the message window enclosed in a <strong>[quote=\"\"][/quote]</strong> block. This method allows you to quote with a reference to a person or whatever else you choose to put. For example, to quote a piece of text Mr. Blobby wrote, you would enter:<br /><br /><strong>[quote=\"Mr. Blobby\"]</strong>The text Mr. Blobby wrote would go here<strong>[/quote]</strong><br /><br />The resulting output will automatically add: Mr. Blobby wrote: before the actual text. Remember that you <strong>must</strong> include the quotation marks \"\" around the name you are quoting -- they are not optional.</li><li>The second method allows you to blindly quote something. To utilise this enclose the text in <strong>[quote][/quote]</strong> tags. When you view the message it will simply show: Quote: before the text itself.</li></ul>");
+$faq[] = array("Outputting code or fixed width data", "If you want to output a piece of code or in fact anything that requires a fixed width with a Courier-type font, you should enclose the text in <strong>[code][/code]</strong> tags, eg.<br /><br /><strong>[code]</strong>echo \"This is some code\";<strong>[/code]</strong><br /><br />All formatting used within <strong>[code][/code]</strong> tags is retained when you later view it.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Quoting text in replies", "There are two ways you can quote text: with a reference or without.<ul><li>When you utilise the Quote function to reply to a post on the board you should notice that the post text is added to the message window enclosed in a <b>[quote=\"\"][/quote]</b> block. This method allows you to quote with a reference to a person or whatever else you choose to put. For example, to quote a piece of text Mr. Blobby wrote, you would enter:<br /><br /><b>[quote=\"Mr. Blobby\"]</b>The text Mr. Blobby wrote would go here<b>[/quote]</b><br /><br />The resulting output will automatically add: Mr. Blobby wrote: before the actual text. Remember that you <b>must</b> include the quotation marks \"\" around the name you are quoting -- they are not optional.</li><li>The second method allows you to blindly quote something. To utilise this enclose the text in <b>[quote][/quote]</b> tags. When you view the message it will simply show: Quote: before the text itself.</li></ul>");
+$faq[] = array("Outputting code or fixed width data", "If you want to output a piece of code or in fact anything that requires a fixed width with a Courier-type font, you should enclose the text in <b>[code][/code]</b> tags, eg.<br /><br /><b>[code]</b>echo \"This is some code\";<b>[/code]</b><br /><br />All formatting used within <b>[code][/code]</b> tags is retained when you later view it.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Creating an Un-ordered list", "BBCode supports two types of lists, unordered and ordered. They are essentially the same as their HTML equivalents. An unordered list ouputs each item in your list sequentially one after the other indenting each with a bullet character. To create an unordered list you use <strong>[list][/list]</strong> and define each item within the list using <strong>[*]</strong>. For example, to list your favorite colours you could use:<br /><br /><strong>[list]</strong><br /><strong>[*]</strong>Red<br /><strong>[*]</strong>Blue<br /><strong>[*]</strong>Yellow<br /><strong>[/list]</strong><br /><br />This would generate the following list:<ul><li>Red</li><li>Blue</li><li>Yellow</li></ul>");
+$faq[] = array("Creating an Ordered list", "The second type of list, an ordered list gives you control over what is output before each item. To create an ordered list you use <strong>[list=1][/list]</strong> to create a numbered list or alternatively <strong>[list=a][/list]</strong> for an alphabetical list. As with the unordered list items are specified using <strong>[*]</strong>. For example:<br /><br /><strong>[list=1]</strong><br /><strong>[*]</strong>Go to the shops<br /><strong>[*]</strong>Buy a new computer<br /><strong>[*]</strong>Swear at computer when it crashes<br /><strong>[/list]</strong><br /><br />will generate the following:<ol type=\"1\"><li>Go to the shops</li><li>Buy a new computer</li><li>Swear at computer when it crashes</li></ol>Whereas for an alphabetical list you would use:<br /><br /><strong>[list=a]</strong><br /><strong>[*]</strong>The first possible answer<br /><strong>[*]</strong>The second possible answer<br /><strong>[*]</strong>The third possible answer<br /><strong>[/list]</strong><br /><br />giving<ol type=\"a\"><li>The first possible answer</li><li>The second possible answer</li><li>The third possible answer</li></ol>");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Creating an Un-ordered list", "BBCode supports two types of lists, unordered and ordered. They are essentially the same as their HTML equivalents. An unordered list ouputs each item in your list sequentially one after the other indenting each with a bullet character. To create an unordered list you use <b>[list][/list]</b> and define each item within the list using <b>[*]</b>. For example, to list your favorite colours you could use:<br /><br /><b>[list]</b><br /><b>[*]</b>Red<br /><b>[*]</b>Blue<br /><b>[*]</b>Yellow<br /><b>[/list]</b><br /><br />This would generate the following list:<ul><li>Red</li><li>Blue</li><li>Yellow</li></ul>");
+$faq[] = array("Creating an Ordered list", "The second type of list, an ordered list gives you control over what is output before each item. To create an ordered list you use <b>[list=1][/list]</b> to create a numbered list or alternatively <b>[list=a][/list]</b> for an alphabetical list. As with the unordered list items are specified using <b>[*]</b>. For example:<br /><br /><b>[list=1]</b><br /><b>[*]</b>Go to the shops<br /><b>[*]</b>Buy a new computer<br /><b>[*]</b>Swear at computer when it crashes<br /><b>[/list]</b><br /><br />will generate the following:<ol type=\"1\"><li>Go to the shops</li><li>Buy a new computer</li><li>Swear at computer when it crashes</li></ol>Whereas for an alphabetical list you would use:<br /><br /><b>[list=a]</b><br /><b>[*]</b>The first possible answer<br /><b>[*]</b>The second possible answer<br /><b>[*]</b>The third possible answer<br /><b>[/list]</b><br /><br />giving<ol type=\"a\"><li>The first possible answer</li><li>The second possible answer</li><li>The third possible answer</li></ol>");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Linking to another site", "phpBB BBCode supports a number of ways of creating URIs, Uniform Resource Indicators better known as URLs.<ul><li>The first of these uses the <strong>[url=][/url]</strong> tag; whatever you type after the = sign will cause the contents of that tag to act as a URL. For example, to link to phpBB.com you could use:<br /><br /><strong>[url=http://www.phpbb.com/]</strong>Visit phpBB!<strong>[/url]</strong><br /><br />This would generate the following link, <a href=\"http://www.phpbb.com/\">Visit phpBB!</a> You will notice the link opens in a new window so the user can continue browsing the forums if they wish.</li><li>If you want the URL itself displayed as the link you can do this by simply using:<br /><br /><strong>[url]</strong>http://www.phpbb.com/<strong>[/url]</strong><br /><br />This would generate the following link: <a href=\"http://www.phpbb.com/\">http://www.phpbb.com/</a></li><li>Additionally phpBB features something called <em>Magic Links</em>which will turn any syntatically correct URL into a link without you needing to specify any tags or even the leading http://. For example typing www.phpbb.com into your message will automatically lead to <a href=\"http://www.phpbb.com/\">www.phpbb.com</a> being output when you view the message.</li><li>The same thing applies equally to email addresses; you can either specify an address explicitly, like:<br /><br /><strong>[email]</strong>no.one@domain.adr<strong>[/email]</strong><br /><br />which will output <a href=\"emailto:no.one@domain.adr\">no.one@domain.adr</a> or you can just type no.one@domain.adr into your message and it will be automatically converted when you view.</li></ul>As with all the BBCode tags you can wrap URLs around any of the other tags such as <strong>[img][/img]</strong> (see next entry), <strong>[b][/b]</strong>, etc. As with the formatting tags it is up to you to ensure the correct open and close order is following. For example:<br /><br /><strong>[url=http://www.phpbb.com/][img]</strong>http://www.phpbb.com/images/phplogo.gif<strong>[/url][/img]</strong><br /><br />is <em>not</em> correct which may lead to your post being deleted so take care.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Linking to another site", "phpBB BBCode supports a number of ways of creating URIs, Uniform Resource Indicators better known as URLs.<ul><li>The first of these uses the <b>[url=][/url]</b> tag; whatever you type after the = sign will cause the contents of that tag to act as a URL. For example, to link to phpBB.com you could use:<br /><br /><b>[url=http://www.phpbb.com/]</b>Visit phpBB!<b>[/url]</b><br /><br />This would generate the following link, <a href=\"http://www.phpbb.com/\" target=\"_blank\">Visit phpBB!</a> You will notice the link opens in a new window so the user can continue browsing the forums if they wish.</li><li>If you want the URL itself displayed as the link you can do this by simply using:<br /><br /><b>[url]</b>http://www.phpbb.com/<b>[/url]</b><br /><br />This would generate the following link: <a href=\"http://www.phpbb.com/\" target=\"_blank\">http://www.phpbb.com/</a></li><li>Additionally phpBB features something called <i>Magic Links</i>which will turn any syntatically correct URL into a link without you needing to specify any tags or even the leading http://. For example typing www.phpbb.com into your message will automatically lead to <a href=\"http://www.phpbb.com/\" target=\"_blank\">www.phpbb.com</a> being output when you view the message.</li><li>The same thing applies equally to email addresses; you can either specify an address explicitly, like:<br /><br /><b>[email]</b>no.one@domain.adr<b>[/email]</b><br /><br />which will output <a href=\"emailto:no.one@domain.adr\">no.one@domain.adr</a> or you can just type no.one@domain.adr into your message and it will be automatically converted when you view.</li></ul>As with all the BBCode tags you can wrap URLs around any of the other tags such as <b>[img][/img]</b> (see next entry), <b>[b][/b]</b>, etc. As with the formatting tags it is up to you to ensure the correct open and close order is following. For example:<br /><br /><b>[url=http://www.phpbb.com/][img]</b>http://www.phpbb.com/images/phplogo.gif<b>[/url][/img]</b><br /><br />is <u>not</u> correct which may lead to your post being deleted so take care.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Adding an image to a post", "phpBB BBCode incorporates a tag for including images in your posts. Two very important things to remember when using this tag are: many users do not appreciate lots of images being shown in posts and second, the image you display must already be available on the Internet (it cannot exist only on your computer, for example, unless you run a webserver!). There is currently no way of storing images locally with phpBB (all these issues are expected to be addressed in the next release of phpBB). To display an image, you must surround the URL pointing to the image with <strong>[img][/img]</strong> tags. For example:<br /><br /><strong>[img]</strong>http://www.phpbb.com/images/phplogo.gif<strong>[/img]</strong><br /><br />As noted in the URL section above you can wrap an image in a <strong>[url][/url]</strong> tag if you wish, eg.<br /><br /><strong>[url=http://www.phpbb.com/][img]</strong>http://www.phpbb.com/images/phplogo.gif<strong>[/img][/url]</strong><br /><br />would generate:<br /><br /><a href=\"http://www.phpbb.com/\">
+#
+#-----[ IN-LINE FIND ]------------------------------------------
+#
+<strong>[img][/img]</strong> tags. For example:<br /><br /><strong>[img]</strong>http://www.phpbb.com/images/phplogo.gif<strong>[/img]</strong><br /><br />As noted in the URL section above you can wrap an image in a <strong>[url][/url]</strong> tag if you wish, eg.<br /><br /><strong>[url=http://www.phpbb.com/][img]</strong>http://www.phpbb.com/images/phplogo.gif<strong>[/img][/url]</strong><br /><br />would generate:<br /><br /><a href=\"http://www.phpbb.com/\">
+#
+#-----[ IN-LINE REPLACE WITH ]------------------------------------------
+# 
+<b>[img][/img]</b> tags. For example:<br /><br /><b>[img]</b>http://www.phpbb.com/images/phplogo.gif<b>[/img]</b><br /><br />As noted in the URL section above you can wrap an image in a <b>[url][/url]</b> tag if you wish, eg.<br /><br /><b>[url=http://www.phpbb.com/][img]</b>http://www.phpbb.com/images/phplogo.gif<b>[/img][/url]</b><br /><br />would generate:<br /><br /><a href=\"http://www.phpbb.com/\" target=\"_blank\">
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+language/lang_english/lang_faq.php
+#
+#-----[ FIND ]------------------------------------------
+#
+
+// Changes for phpBB WASO
+// Marco Battilana 
+// 25 March 2005 
+//	- Replaced <u>xxx</u> and <i>xxx</i> with <em>xxx</em> 
+//  - Removed multiple instances of the target attribute
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Why do I get logged off automatically?", "If you do not check the <em>Log me in automatically</em> box when you log in, the board will only keep you logged in for a preset time. This prevents misuse of your account by anyone else. To stay logged in, check the box during login. This is not recommended if you access the board from a shared computer, e.g. library, internet cafe, university cluster, etc.");
+$faq[] = array("How do I prevent my username from appearing in the online user listings?", "In your profile you will find an option <em>Hide your online status</em>; if you switch this <em>on</em> you'll only appear to board administrators or to yourself. You will be counted as a hidden user.");
+$faq[] = array("I've lost my password!", "Don't panic! While your password cannot be retrieved it can be reset. To do this go to the login page and click <em>I've forgotten my password</em>. Follow the instructions and you should be back online in no time.");
+$faq[] = array("I registered but cannot log in!", "First check that you are entering the correct username and password. If they are okay then one of two things may have happened: if COPPA support is enabled and you clicked the <em>I am under 13 years old</em> link while registering then you will have to follow the instructions you received. If this is not the case then maybe your account need activating. Some boards will require all new registrations be activated, either by yourself or by the administrator before you can log on. When you registered it would have told you whether activation was required. If you were sent an email then follow the instructions; if you did not receive the email then check that your email address is valid. One reason activation is used is to reduce the possibility of <em>rogue</em> users abusing the board anonymously. If you are sure the email address you used is valid then try contacting the board administrator.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Why do I get logged off automatically?", "If you do not check the <i>Log me in automatically</i> box when you log in, the board will only keep you logged in for a preset time. This prevents misuse of your account by anyone else. To stay logged in, check the box during login. This is not recommended if you access the board from a shared computer, e.g. library, internet cafe, university cluster, etc.");
+$faq[] = array("How do I prevent my username from appearing in the online user listings?", "In your profile you will find an option <i>Hide your online status</i>; if you switch this <i>on</i> you'll only appear to board administrators or to yourself. You will be counted as a hidden user.");
+$faq[] = array("I've lost my password!", "Don't panic! While your password cannot be retrieved it can be reset. To do this go to the login page and click <u>I've forgotten my password</u>. Follow the instructions and you should be back online in no time.");
+$faq[] = array("I registered but cannot log in!", "First check that you are entering the correct username and password. If they are okay then one of two things may have happened: if COPPA support is enabled and you clicked the <u>I am under 13 years old</u> link while registering then you will have to follow the instructions you received. If this is not the case then maybe your account need activating. Some boards will require all new registrations be activated, either by yourself or by the administrator before you can log on. When you registered it would have told you whether activation was required. If you were sent an email then follow the instructions; if you did not receive the email then check that your email address is valid. One reason activation is used is to reduce the possibility of <i>rogue</i> users abusing the board anonymously. If you are sure the email address you used is valid then try contacting the board administrator.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("How do I change my settings?", "All your settings (if you are registered) are stored in the database. To alter them click the <em>Profile</em> link (generally shown at the top of pages but this may not be the case). This will allow you to change all your settings.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("How do I change my settings?", "All your settings (if you are registered) are stored in the database. To alter them click the <u>Profile</u> link (generally shown at the top of pages but this may not be the case). This will allow you to change all your settings.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("How do I post a topic in a forum?", "Easy -- click the relevant button on either the forum or topic screens. You may need to register before you can post a message. The facilities available to you are listed at the bottom of the forum and topic screens (the <em>You can post new topics, You can vote in polls, etc.</em> list)");
+$faq[] = array("How do I edit or delete a post?", "Unless you are the board admin or forum moderator you can only edit or delete your own posts. You can edit a post (sometimes for only a limited time after it was made) by clicking the <em>edit</em> button for the relevant post.  If someone has already replied to the post, you will find a small piece of text output below the post when you return to the topic that lists the number of times you edited it. This will only appear if no one has replied; it also will not appear if moderators or administrators edit the post (they should leave a message saying what they altered and why). Please note that normal users cannot delete a post once someone has replied.");
+$faq[] = array("How do I add a signature to my post?", "To add a signature to a post you must first create one; this is done via your profile. Once created you can check the <em>Add Signature</em> box on the posting form to add your signature. You can also add a signature by default to all your posts by checking the appropriate radio box in your profile. You can still prevent a signature being added to individual posts by un-checking the add signature box on the posting form.");
+$faq[] = array("How do I create a poll?", "Creating a poll is easy -- when you post a new topic (or edit the first post of a topic, if you have permission) you should see a <em>Add Poll</em> form below the main posting box. If you cannot see this then you probably do not have rights to create polls. You should enter a title for the poll and then at least two options -- to set an option type in the poll question and click the <em>Add option</em> button. You can also set a time limit for the poll, 0 being an infinite amount. There will be a limit to the number of options you can list, which is set by the board administrator");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("How do I post a topic in a forum?", "Easy -- click the relevant button on either the forum or topic screens. You may need to register before you can post a message. The facilities available to you are listed at the bottom of the forum and topic screens (the <i>You can post new topics, You can vote in polls, etc.</i> list)");
+$faq[] = array("How do I edit or delete a post?", "Unless you are the board admin or forum moderator you can only edit or delete your own posts. You can edit a post (sometimes for only a limited time after it was made) by clicking the <i>edit</i> button for the relevant post.  If someone has already replied to the post, you will find a small piece of text output below the post when you return to the topic that lists the number of times you edited it. This will only appear if no one has replied; it also will not appear if moderators or administrators edit the post (they should leave a message saying what they altered and why). Please note that normal users cannot delete a post once someone has replied.");
+$faq[] = array("How do I add a signature to my post?", "To add a signature to a post you must first create one; this is done via your profile. Once created you can check the <i>Add Signature</i> box on the posting form to add your signature. You can also add a signature by default to all your posts by checking the appropriate radio box in your profile. You can still prevent a signature being added to individual posts by un-checking the add signature box on the posting form.");
+$faq[] = array("How do I create a poll?", "Creating a poll is easy -- when you post a new topic (or edit the first post of a topic, if you have permission) you should see a <i>Add Poll</i> form below the main posting box. If you cannot see this then you probably do not have rights to create polls. You should enter a title for the poll and then at least two options -- to set an option type in the poll question and click the <i>Add option</i> button. You can also set a time limit for the poll, 0 being an infinite amount. There will be a limit to the number of options you can list, which is set by the board administrator");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Can I use HTML?", "That depends on whether the administrator allows you to; they have complete control over it. If you are allowed to use it, you will probably find only certain tags work. This is a <em>safety</em> feature to prevent people from abusing the board by using tags which may destroy the layout or cause other problems. If HTML is enabled you can disable it on a per post basis from the posting form.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Can I use HTML?", "That depends on whether the administrator allows you to; they have complete control over it. If you are allowed to use it, you will probably find only certain tags work. This is a <i>safety</i> feature to prevent people from abusing the board by using tags which may destroy the layout or cause other problems. If HTML is enabled you can disable it on a per post basis from the posting form.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("What are Moderators?", "Moderators are individuals (or groups of individuals) whose job it is to look after the running of the forums from day to day. They have the power to edit or delete posts and lock, unlock, move, delete and split topics in the forum they moderate. Generally moderators are there to prevent people going <em>off-topic</em> or posting abusive or offensive material.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("What are Moderators?", "Moderators are individuals (or groups of individuals) whose job it is to look after the running of the forums from day to day. They have the power to edit or delete posts and lock, unlock, move, delete and split topics in the forum they moderate. Generally moderators are there to prevent people going <i>off-topic</i> or posting abusive or offensive material.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("How do I join a Usergroup?", "To join a usergroup click the usergroup link on the page header (dependent on template design) and you can then view all usergroups. Not all groups are <em>open access</em> -- some are closed and some may even have hidden memberships. If the board is open then you can request to join it by clicking the appropriate button. The user group moderator will need to approve your request; they may ask why you want to join the group. Please do not pester a group moderator if they turn your request down -- they will have their reasons.");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("How do I join a Usergroup?", "To join a usergroup click the usergroup link on the page header (dependent on template design) and you can then view all usergroups. Not all groups are <i>open access</i> -- some are closed and some may even have hidden memberships. If the board is open then you can request to join it by clicking the appropriate button. The user group moderator will need to approve your request; they may ask why you want to join the group. Please do not pester a group moderator if they turn your request down -- they will have their reasons.");
+#
+#-----[ FIND ]------------------------------------------
+#
+$faq[] = array("Who wrote this bulletin board?", "This software (in its unmodified form) is produced, released and is copyrighted <a href=\"http://www.phpbb.com/\" title=\"Visit the home of the phpBB Forum framework \">phpBB Group</a>. It is made available under the GNU General Public License and may be freely distributed; see link for more details");
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$faq[] = array("Who wrote this bulletin board?", "This software (in its unmodified form) is produced, released and is copyrighted <a href=\"http://www.phpbb.com/\" target=\"_blank\">phpBB Group</a>. It is made available under the GNU General Public License and may be freely distributed; see link for more details");
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+language/lang_english/lang_main.php
+#
+#-----[ FIND ]------------------------------------------
+#
+
+// Changes for phpBB WASO
+// Marco Battilana
+// 25 March 2005
+// - Changed the link text to make sense in context (ie: 'View your Message' vs. 'Click Here'
+// - Replaced <b>xxx</b> with <strong>xxx</strong>
+// 28 March 2005
+// - Removed instance of the target attribute
+// - Replaced <u>xxx</u> with <em>xxx</em>
+// 25 June 2005
+// - Incorporated phpBB 2.0.15 fixes
+// 10 September 2005
+// - Added title for new 'about.php' template
+// 18 Septembet 2005
+// - Added 2 'lang' tokens for 'New Announcements' and 'New Sticky'
+// 16 October 2005
+// - Improved wording for screen reader access
+// 30 October 2005
+// - Incorporated phpBB 2.0.18 fixes
+// 19 December 2005
+// - Added English text from the templates to account for Internationalization
+// 30 December 2005
+// - Added 2 'lang' tokens to signify when a user is an administrator and a moderator
+// 1 January 2006
+// - Improved wording of labels for screen reader access
+// 7 May 2006
+// - Incorporated phpBB 2.0.20 fixes
+// 18 June 2006
+// - Added various 'lang' tokens for common elements
+// 19 December 2007
+// - Incorporated phpBB 2.0.22 fixes
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['DATE_FORMAT'] =  'd F Y'; // This should be changed to the default date format for your language, php date() format
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['DATE_FORMAT'] =  'd M Y'; // This should be changed to the default date format for your language, php date() format
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Page_of'] = 'Page <strong>%d</strong> of <strong>%d</strong>'; // Replaces with: Page 1 of 2 for example
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Page_of'] = 'Page <b>%d</b> of <b>%d</b>'; // Replaces with: Page 1 of 2 for example
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Click_return_topic'] = '%sReturn to the topic%s'; // %s's here are for uris, do not remove!
+$lang['Click_return_login'] = '%sPlease try again%s';
+$lang['Click_return_forum'] = '%sReturn to the forum%s';
+$lang['Click_view_message'] = '%sView your message%s';
+$lang['Click_return_modcp'] = '%sReturn to the Moderator Control Panel%s';
+$lang['Click_return_group'] = '%sReturn to Group Information%s';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Click_return_topic'] = 'Click %sHere%s to return to the topic'; // %s's here are for uris, do not remove!
+$lang['Click_return_login'] = 'Click %sHere%s to try again';
+$lang['Click_return_forum'] = 'Click %sHere%s to return to the forum';
+$lang['Click_view_message'] = 'Click %sHere%s to view your message';
+$lang['Click_return_modcp'] = 'Click %sHere%s to return to the Moderator Control Panel';
+$lang['Click_return_group'] = 'Click %sHere%s to return to group information';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Online_users_zero_total'] = 'In total there are <strong>0</strong> users online: ';
+$lang['Online_users_total'] = 'In total there are <strong>%d</strong> users online: ';
+$lang['Online_user_total'] = 'In total there is <strong>%d</strong> user online: ';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Online_users_zero_total'] = 'In total there are <b>0</b> users online :: ';
+$lang['Online_users_total'] = 'In total there are <b>%d</b> users online :: ';
+$lang['Online_user_total'] = 'In total there is <b>%d</b> user online :: ';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Record_online_users'] = 'Most users ever online was <strong>%s</strong> on %s'; // first %s = number of users, second %s is the date.
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Record_online_users'] = 'Most users ever online was <b>%s</b> on %s'; // first %s = number of users, second %s is the date.
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Admin_online_title'] = 'This user is an Administrator';
+$lang['Moderator_online_title'] = 'This user is a Moderator';
+
+$lang['skip_to_content'] = 'Skip To Content';
+$lang['Default_Style_Sheet'] = 'Default Style Sheet';
+$lang['High_Contrast_Style_Sheet'] = 'High Contrast Style Sheet';
+$lang['Document_Structure_Style_Sheet'] = 'Document Structure Style Sheet';
+$lang['Larger_Text_Style_Sheet'] = 'Larger Text Style Sheet';
+$lang['Full_Screen_Width_Style_Sheet'] = 'Full Screen Width Style Sheet';
+$lang['SubSilver_WASO_Style_Sheet'] = 'SubSilver WASO Style Sheet';
+$lang['No_Style_Sheet'] = 'No Style Sheet';
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['FAQ'] = 'Frequently Asked Questions';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['FAQ'] = 'FAQ';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Posted_articles_zero_total'] = 'Our users have posted a total of <strong>0</strong> articles'; // Number of posts
+$lang['Posted_articles_total'] = 'Our users have posted a total of <strong>%d</strong> articles'; // Number of posts
+$lang['Posted_article_total'] = 'Our users have posted a total of <strong>%d</strong> article'; // Number of posts
+$lang['Registered_users_zero_total'] = 'We have <strong>0</strong> registered users'; // # registered users
+$lang['Registered_users_total'] = 'We have <strong>%d</strong> registered users'; // # registered users
+$lang['Registered_user_total'] = 'We have <strong>%d</strong> registered user'; // # registered users
+$lang['Newest_user'] = 'The newest registered user is <strong>%s%s%s</strong>'; // a href, username, /a 
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Posted_articles_zero_total'] = 'Our users have posted a total of <b>0</b> articles'; // Number of posts
+$lang['Posted_articles_total'] = 'Our users have posted a total of <b>%d</b> articles'; // Number of posts
+$lang['Posted_article_total'] = 'Our users have posted a total of <b>%d</b> article'; // Number of posts
+$lang['Registered_users_zero_total'] = 'We have <b>0</b> registered users'; // # registered users
+$lang['Registered_users_total'] = 'We have <b>%d</b> registered users'; // # registered users
+$lang['Registered_user_total'] = 'We have <b>%d</b> registered user'; // # registered users
+$lang['Newest_user'] = 'The newest registered user is <b>%s%s%s</b>'; // a href, username, /a 
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Large_Icon_Legend_Title'] = 'This list is the large icon legend that shows the meaning of each icon';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Who_is_Online'] = 'Who is Online';
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Forum_Name_Caption'] = 'A list of current topics in this forum named';
+$lang['Icon_Legend_Title'] = 'This list is the small icon legend that shows the meaning of each icon';
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Topic_Announcement'] = '<strong>Announcement:</strong>';
+$lang['Topic_Sticky'] = '<strong>Sticky:</strong>';
+$lang['Topic_Moved'] = '<strong>Moved:</strong>';
+$lang['Topic_Poll'] = '<strong>[ Poll ]</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Topic_Announcement'] = '<b>Announcement:</b>';
+$lang['Topic_Sticky'] = '<b>Sticky:</b>';
+$lang['Topic_Moved'] = '<b>Moved:</b>';
+$lang['Topic_Poll'] = '<b>[ Poll ]</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Rules_post_can'] = 'You <strong>can</strong> post new topics in this forum';
+$lang['Rules_post_cannot'] = 'You <strong>cannot</strong> post new topics in this forum';
+$lang['Rules_reply_can'] = 'You <strong>can</strong> reply to topics in this forum';
+$lang['Rules_reply_cannot'] = 'You <strong>cannot</strong> reply to topics in this forum';
+$lang['Rules_edit_can'] = 'You <strong>can</strong> edit your posts in this forum';
+$lang['Rules_edit_cannot'] = 'You <strong>cannot</strong> edit your posts in this forum';
+$lang['Rules_delete_can'] = 'You <strong>can</strong> delete your posts in this forum';
+$lang['Rules_delete_cannot'] = 'You <strong>cannot</strong> delete your posts in this forum';
+$lang['Rules_vote_can'] = 'You <strong>can</strong> vote in polls in this forum';
+$lang['Rules_vote_cannot'] = 'You <strong>cannot</strong> vote in polls in this forum';
+$lang['Rules_moderate'] = 'You <strong>can</strong> %smoderate this forum%s'; // %s replaced by a href links, do not remove! 
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Rules_post_can'] = 'You <b>can</b> post new topics in this forum';
+$lang['Rules_post_cannot'] = 'You <b>cannot</b> post new topics in this forum';
+$lang['Rules_reply_can'] = 'You <b>can</b> reply to topics in this forum';
+$lang['Rules_reply_cannot'] = 'You <b>cannot</b> reply to topics in this forum';
+$lang['Rules_edit_can'] = 'You <b>can</b> edit your posts in this forum';
+$lang['Rules_edit_cannot'] = 'You <b>cannot</b> edit your posts in this forum';
+$lang['Rules_delete_can'] = 'You <b>can</b> delete your posts in this forum';
+$lang['Rules_delete_cannot'] = 'You <b>cannot</b> delete your posts in this forum';
+$lang['Rules_vote_can'] = 'You <b>can</b> vote in polls in this forum';
+$lang['Rules_vote_cannot'] = 'You <b>cannot</b> vote in polls in this forum';
+$lang['Rules_moderate'] = 'You <b>can</b> %smoderate this forum%s'; // %s replaced by a href links, do not remove! 
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['No_topics_post_one'] = 'There are no posts in this forum.<br />Click on the <strong>Post New Topic</strong> link on this page to post one.';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['No_topics_post_one'] = 'There are no posts in this forum.<br />Click on the <b>Post New Topic</b> link on this page to post one.';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Post_Announcement'] = 'Announcement';
+$lang['Post_Announcement_new'] = 'New Announcement';
+$lang['Post_Sticky'] = 'Sticky';
+$lang['Post_Sticky_new'] = 'New Sticky';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Post_Announcement'] = 'Announcement';
+$lang['Post_Sticky'] = 'Sticky';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Poll_for'] = 'Number of days for poll';
+$lang['Days'] = 'Days'; // This is used for the Run poll for ... Days + in admin_forums for pruning
+$lang['Poll_for_explain'] = ' - Enter 0 or leave blank for a never-ending poll';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Poll_for'] = 'Run poll for';
+$lang['Days'] = 'Days'; // This is used for the Run poll for ... Days + in admin_forums for pruning
+$lang['Poll_for_explain'] = '[ Enter 0 or leave blank for a never-ending poll ]';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['HTML_is_ON'] = 'HTML is <em>ON</em>';
+$lang['HTML_is_OFF'] = 'HTML is <em>OFF</em>';
+$lang['BBCode_is_ON'] = '%sBBCode%s is <em>ON</em>'; // %s are replaced with URI pointing to FAQ
+$lang['BBCode_is_OFF'] = '%sBBCode%s is <em>OFF</em>';
+$lang['Smilies_are_ON'] = 'Smilies are <em>ON</em>';
+$lang['Smilies_are_OFF'] = 'Smilies are <em>OFF</em>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['HTML_is_ON'] = 'HTML is <u>ON</u>';
+$lang['HTML_is_OFF'] = 'HTML is <u>OFF</u>';
+$lang['BBCode_is_ON'] = '%sBBCode%s is <u>ON</u>'; // %s are replaced with URI pointing to FAQ
+$lang['BBCode_is_OFF'] = '%sBBCode%s is <u>OFF</u>';
+$lang['Smilies_are_ON'] = 'Smilies are <u>ON</u>';
+$lang['Smilies_are_OFF'] = 'Smilies are <u>OFF</u>';
+#
+#-----[ FIND ]------------------------------------------
+#
+
+$lang['Private_Messages_Title'] = 'Private Messages';
+$lang['Private_Message_Caption'] = 'A list of your private messages';
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Click_return_inbox'] = '%sReturn to your Inbox%s';
+$lang['Click_return_index'] = '%sReturn to the Index%s';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Click_return_inbox'] = 'Click %sHere%s to return to your Inbox';
+$lang['Click_return_index'] = 'Click %sHere%s to return to the Index';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Click_view_privmsg'] = '%sVisit your Inbox%s';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Click_view_privmsg'] = 'Click %sHere%s to visit your Inbox';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Viewing_user_profile'] = 'Viewing profile of %s'; // %s is username
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Viewing_user_profile'] = 'Viewing profile :: %s'; // %s is username 
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Date_format_explain'] = 'The syntax used is identical to the PHP <a href=\'http://www.php.net/date\' title=\'Read more about the php date function\'>date()</a> function.';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Date_format_explain'] = 'The syntax used is identical to the PHP <a href=\'http://www.php.net/date\' target=\'_other\'>date()</a> function.';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Agree_under_13'] = 'I Agree to these terms and am under 13 years of age';
+$lang['Agree_over_13'] = 'I Agree to these terms and am over or exactly 13 years of age';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Agree_under_13'] = 'I Agree to these terms and am <b>under</b> 13 years of age';
+$lang['Agree_over_13'] = 'I Agree to these terms and am <b>over</b> or <b>exactly</b> 13 years of age';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Memberlist_Title'] = 'Memberlist';
+$lang['Memberlist_Caption'] = 'A list of current members';
+$lang['Memberlist_Number'] = 'Number';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Group Participants'] = 'Group Participants';
+$lang['Group_Info_Caption'] = 'A list of the current members and moderators for the group name of';
+$lang['Group_Pending_Caption'] = 'A list of the current pending members for the group name of';
+$lang['Group_Hidden_Caption'] = 'A list of the current and hidden members for the group name of';
+
+$lang['Moderator_Options_Title'] = 'Moderator Options';
+$lang['Find_Users_Title'] - 'Find Users';
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Search_keywords_explain'] = 'You can use <em>AND</em> to define words which must be in the results, <em>OR</em> to define words which may be in the result and <em>NOT</em> to define words which should not be in the result. Use * as a wildcard for partial matches';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Search_keywords_explain'] = 'You can use <u>AND</u> to define words which must be in the results, <u>OR</u> to define words which may be in the result and <u>NOT</u> to define words which should not be in the result. Use * as a wildcard for partial matches';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Search_author_explain'] = 'Use an asterisk (*) as a wildcard for partial matches';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Search_author_explain'] = 'Use * as a wildcard for partial matches';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Return_first'] = 'Number of characters of posts'; // followed by xxx characters in a select box
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Return_first'] = 'Return first'; // followed by xxx characters in a select box
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Search_Results_Caption'] = 'A list of your search matches';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Auth_Anonymous_Users'] = '<strong>anonymous users</strong>';
+$lang['Auth_Registered_Users'] = '<strong>registered users</strong>';
+$lang['Auth_Users_granted_access'] = '<strong>users granted special access</strong>';
+$lang['Auth_Moderators'] = '<strong>moderators</strong>';
+$lang['Auth_Administrators'] = '<strong>administrators</strong>';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Auth_Anonymous_Users'] = '<b>anonymous users</b>';
+$lang['Auth_Registered_Users'] = '<b>registered users</b>';
+$lang['Auth_Users_granted_access'] = '<b>users granted special access</b>';
+$lang['Auth_Moderators'] = '<b>moderators</b>';
+$lang['Auth_Administrators'] = '<b>administrators</b>';
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Online_Caption'] = 'A list of users who are currently visiting the forum';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+$lang['Viewing_FAQ'] = 'Viewing Frequently Asked Questions';
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+$lang['Viewing_FAQ'] = 'Viewing FAQ';
+#
+#-----[ FIND ]------------------------------------------
+#
+
+//
+// Footer
+//
+$lang['phpbb_waso_creator'] = 'Visit the designer of this site, Crazy Bat Designs';
+$lang['phpbb_waso_about'] = 'About';
+$lang['phpbb_waso_about_title'] = 'More information about this project, accessibility statement, release notes, and acknowledgements';
+$lang['phpbb_waso_validator'] = 'Validator';
+$lang['phpbb_waso_validator_title'] = 'Check for Document Validation';
+$lang['phpbb_waso_css_validator_title'] = 'Check for Cascading Style Sheet Validation';
+$lang['phpbb_waso_section_508'] = 'Check for Section 508 Validation';
+$lang['phpbb_waso_wai_title'] = 'This site strives to conform to at least Web Accessibility Initiatives - Level A';
+
+//
+// About
+//
+$lang['About'] = 'About phpBB WASO';
+
+
+
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/index_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+<td class="row1" align="center" valign="middle" height="50">{catrow.forumrow.FORUM_FOLDER_IMG}</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+<td class="row1" align="center" valign="middle" height="50"><img src="{catrow.forumrow.FORUM_FOLDER_IMG}" width="46" height="25" alt="{catrow.forumrow.L_FORUM_FOLDER_ALT}" title="{catrow.forumrow.L_FORUM_FOLDER_ALT}" /></td>
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/modcp_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td class="row1" align="center" valign="middle">{topicrow.TOPIC_FOLDER_IMG}</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	  <td class="row1" align="center" valign="middle"><img src="{topicrow.TOPIC_FOLDER_IMG}" width="19" height="18" alt="{topicrow.L_TOPIC_FOLDER_ALT}" title="{topicrow.L_TOPIC_FOLDER_ALT}" /></td>
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/modcp_viewip.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+		  <td align="right"><a href="{userrow.U_SEARCHPOSTS}" title="{userrow.L_SEARCH_POSTS}" class="smallbutton-search">{SEARCH_IMG}</a>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		  <td align="right"><a href="{userrow.U_SEARCHPOSTS}" title="{userrow.L_SEARCH_POSTS}"><img src="{SEARCH_IMG}" border="0" alt="{L_SEARCH}" /></a>
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/overall_header.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+<link rel="stylesheet" href="templates/subSilver/screen-subsilver-waso.css" type="text/css" media="screen">
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ FIND ]------------------------------------------
+#
+<div id="content">
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/overall_footer.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+</div>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/privmsgs_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td align="left" valign="middle"><ul class="postlist">{POST_PM_IMG}</ul></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	  <td align="left" valign="middle">{POST_PM_IMG}</td>
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td class="{listrow.ROW_CLASS}" width="5%" align="center" valign="middle">{listrow.PRIVMSG_FOLDER_IMG}</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	  <td class="{listrow.ROW_CLASS}" width="5%" align="center" valign="middle"><img src="{listrow.PRIVMSG_FOLDER_IMG}" width="19" height="18" alt="{listrow.L_PRIVMSG_FOLDER_ALT}" title="{listrow.L_PRIVMSG_FOLDER_ALT}" /></td>
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td align="left" valign="middle"><span class="nav"><ul class="postlist">{POST_PM_IMG}</ul></span></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#	  
+	  <td align="left" valign="middle"><span class="nav">{POST_PM_IMG}</span></td>
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/privmsgs_read_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td valign="middle"><ul class="postlist">{REPLY_PM_IMG}</ul></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#	  
+  	  <td valign="middle">{REPLY_PM_IMG}</td>
+#
+#-----[ FIND ]------------------------------------------
+#	  
+			<td valign="middle" nowrap="nowrap">
+				<div class="membercommands">
+					<ul>{PROFILE_IMG} {PM_IMG} {EMAIL_IMG} {WWW_IMG} {AIM_IMG} {YIM_IMG} {MSN_IMG}<script language="JavaScript" type="text/javascript"><!-- 
+
+if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+	document.write(' {ICQ_IMG}');
+else
+	document.write('</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute; left: -130px;">{ICQ_IMG}</div><div style="position:absolute;left:-127px;top:-1px">{ICQ_STATUS_IMG}</div></div>');
+			
+			//--></script><noscript>{ICQ_IMG}</noscript></ul>
+				</div></td>		  	  
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#		  
+			<td valign="middle" nowrap="nowrap">{PROFILE_IMG} {PM_IMG} {EMAIL_IMG} 
+			  {WWW_IMG} {AIM_IMG} {YIM_IMG} {MSN_IMG}</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><script language="JavaScript" type="text/javascript"><!-- 
+
+		if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+			document.write('{ICQ_IMG}');
+		else
+			document.write('<div style="position:relative"><div style="position:absolute">{ICQ_IMG}</div><div style="position:absolute;left:3px">{ICQ_STATUS_IMG}</div></div>');
+		  
+		  //--></script><noscript>{ICQ_IMG}</noscript></td>
+#
+#-----[ FIND ]------------------------------------------
+#	  
+  	  <td><ul class="postlist">{REPLY_PM_IMG}</ul></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#	  
+  	  <td>{REPLY_PM_IMG}</td>
+
+
+			
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/search_results_topics.tpl
+#
+#-----[ FIND ]------------------------------------------
+#					
+	<td class="row1" align="center" valign="middle">{searchresults.TOPIC_FOLDER_IMG}</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	<td class="row1" align="center" valign="middle"><img src="{searchresults.TOPIC_FOLDER_IMG}" width="19" height="18" alt="{searchresults.L_TOPIC_FOLDER_ALT}" title="{searchresults.L_TOPIC_FOLDER_ALT}" /></td>
+
+
+
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/viewforum_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td align="left" valign="middle" width="50"><a href="{U_POST_NEW_TOPIC}">{POST_IMG}</a></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	  <td align="left" valign="middle" width="50"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}" /></a></td>
+
+#
+#-----[ FIND ]------------------------------------------
+#
+	  <td class="row1" align="center" valign="middle" width="20">{topicrow.TOPIC_FOLDER_IMG}</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	  <td class="row1" align="center" valign="middle" width="20"><img src="{topicrow.TOPIC_FOLDER_IMG}" width="19" height="18" alt="{topicrow.L_TOPIC_FOLDER_ALT}" title="{topicrow.L_TOPIC_FOLDER_ALT}" /></td>
+
+#
+#-----[ FIND ]------------------------------------------
+#
+	  	  <td align="left" valign="middle" width="50"><a href="{U_POST_NEW_TOPIC}">{POST_IMG}</a></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		  <td align="left" valign="middle" width="50"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}" /></a></td>
+
+#
+#-----[ FIND ]------------------------------------------
+#	 
+		<td align="left" valign="top">
+			<div id="iconlegend" title="{L_ICON_LEGEND_TITLE}">
+				<ul>
+					<li class="newposts">{FOLDER_NEW_IMG}</li>
+					<li class="nonewposts">{FOLDER_IMG}</li>
+					<li class="announcement">{FOLDER_ANNOUNCE_IMG}</li> 
+					<li class="hotnewposts">{FOLDER_HOT_NEW_IMG}</li>
+					<li class="hot">{FOLDER_HOT_IMG}</li>
+					<li class="sticky">{FOLDER_STICKY_IMG}</li>
+					<li class="lockednew">{FOLDER_LOCKED_NEW_IMG}</li>
+					<li class="locked">{FOLDER_LOCKED_IMG}</li> 					
+				</ul>
+			</div>
+		</td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+		<td align="left" valign="top"><table cellspacing="3" cellpadding="0" border="0">
+			<tr>
+				<td width="20" align="left"><img src="{FOLDER_NEW_IMG}" alt="{L_NEW_POSTS}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NEW_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="{FOLDER_IMG}" alt="{L_NO_NEW_POSTS}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NO_NEW_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="{FOLDER_ANNOUNCE_IMG}" alt="{L_ANNOUNCEMENT}" width="19" height="18" /></td>
+				<td class="gensmall">{L_ANNOUNCEMENT}</td>
+			</tr>
+			<tr> 
+				<td width="20" align="center"><img src="{FOLDER_HOT_NEW_IMG}" alt="{L_NEW_POSTS_HOT}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NEW_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="{FOLDER_HOT_IMG}" alt="{L_NO_NEW_POSTS_HOT}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NO_NEW_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" align="center"><img src="{FOLDER_STICKY_IMG}" alt="{L_STICKY}" width="19" height="18" /></td>
+				<td class="gensmall">{L_STICKY}</td>
+			</tr>
+			<tr>
+				<td class="gensmall"><img src="{FOLDER_LOCKED_NEW_IMG}" alt="{L_NEW_POSTS_LOCKED}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NEW_POSTS_LOCKED}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td class="gensmall"><img src="{FOLDER_LOCKED_IMG}" alt="{L_NO_NEW_POSTS_LOCKED}" width="19" height="18" /></td>
+				<td class="gensmall">{L_NO_NEW_POSTS_LOCKED}</td>
+			</tr>
+		</table></td>
+
+		
+		
+#
+#-----[ OPEN ]------------------------------------------
+# 
+templates/subSilver/viewtopic_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+	<td align="left" valign="bottom" nowrap="nowrap"><span class="nav">
+		<ul class="postlist">
+			<li>{POST_IMG}</li>
+			<li>{REPLY_IMG}</li>
+		</ul></span></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	<td align="left" valign="bottom" nowrap="nowrap"><span class="nav"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="{U_POST_REPLY_TOPIC}"><img src="{REPLY_IMG}" border="0" alt="{L_POST_REPLY_TOPIC}" align="middle" /></a></span></td>
+#
+#-----[ FIND ]------------------------------------------
+#				
+				<td valign="top" nowrap="nowrap">
+					<div class="messagecommands">
+						<ul>{postrow.QUOTE_IMG} {postrow.EDIT_IMG} {postrow.DELETE_IMG} {postrow.IP_IMG}</ul>
+					</div></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#	
+				<td valign="top" nowrap="nowrap">{postrow.QUOTE_IMG} {postrow.EDIT_IMG} {postrow.DELETE_IMG} {postrow.IP_IMG}</td>
+#
+#-----[ FIND ]------------------------------------------
+#						
+				<td valign="middle" nowrap="nowrap">
+					<div class="membercommands">
+						<ul>{postrow.PROFILE_IMG} {postrow.PM_IMG} {postrow.EMAIL_IMG} {postrow.WWW_IMG} {postrow.AIM_IMG} {postrow.YIM_IMG} {postrow.MSN_IMG}<script language="JavaScript" type="text/javascript"><!-- 
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' {postrow.ICQ_IMG}');
+	else
+		document.write('</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute; left: -64px;">{postrow.ICQ_IMG}</div><div style="position:absolute;left:-61px;top:-1px">{postrow.ICQ_STATUS_IMG}</div></div>');
+				
+				//--></script><noscript>{postrow.ICQ_IMG}</noscript></ul>
+					</div></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#					
+				<td valign="middle" nowrap="nowrap">{postrow.PROFILE_IMG} {postrow.PM_IMG} {postrow.EMAIL_IMG} {postrow.WWW_IMG} {postrow.AIM_IMG} {postrow.YIM_IMG} {postrow.MSN_IMG}<script language="JavaScript" type="text/javascript"><!-- 
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' {postrow.ICQ_IMG}');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute">{postrow.ICQ_IMG}</div><div style="position:absolute;left:3px;top:-1px">{postrow.ICQ_STATUS_IMG}</div></div>');
+				
+				//--></script><noscript>{postrow.ICQ_IMG}</noscript></td>
+#
+#-----[ FIND ]------------------------------------------
+#		
+	<td align="left" valign="middle" nowrap="nowrap"><span class="nav">
+		<ul class="postlist">
+			<li>{POST_IMG}</li>
+			<li>{REPLY_IMG}</li>
+		</ul></span></td>
+#
+#-----[ REPLACE WITH ]------------------------------------------
+#
+	<td align="left" valign="middle" nowrap="nowrap"><span class="nav"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="{U_POST_REPLY_TOPIC}"><img src="{REPLY_IMG}" border="0" alt="{L_POST_REPLY_TOPIC}" align="middle" /></a></span></td>
+
+
+
+# 
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------ 
+# 
+# EoM
